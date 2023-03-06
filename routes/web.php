@@ -58,5 +58,9 @@ Route::prefix('admin')->group(function () {
        //route resource city
        Route::resource('/citys', \App\Http\Controllers\Admin\CityController::class, ['as' => 'admin'])
        ->middleware('permission:citys.index|citys.create|citys.edit|citys.delete');
+
+       //route resource subdistricts
+       Route::resource('/subdistricts', \App\Http\Controllers\Admin\SubdistrictController::class, ['as' => 'admin'])
+       ->middleware('permission:subdistricts.index|subdistricts.create|subdistricts.edit|subdistricts.delete');
     });
 });

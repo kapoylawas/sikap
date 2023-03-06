@@ -11,8 +11,8 @@ class CityController extends Controller
     public function index()
     {
 
-        $citys = City::when(request()->q, function ($users) {
-            $users = $users->where('name', 'like', '%' . request()->q . '%');
+        $citys = City::when(request()->q, function ($citys) {
+            $citys = $citys->where('name', 'like', '%' . request()->q . '%');
         })->latest()->paginate(5);
 
         $citys->appends(['q' => request()->q]);

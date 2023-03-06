@@ -24,10 +24,10 @@ export default function PermissionIndex() {
                 {/* <div className="row mt-4">
                     <div className="col-12 col-md-12 col-lg-12 mt-5"></div>
                 </div> */}
-                <div class="row mt-5">
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-9 col-12 mb-2">
+                <div className="row mt-5">
+                    <div className="col-md-8">
+                        <div className="row">
+                            <div className="col-md-9 col-12 mb-2">
                                 <Search URL={"/admin/permissions"} />
                             </div>
                         </div>

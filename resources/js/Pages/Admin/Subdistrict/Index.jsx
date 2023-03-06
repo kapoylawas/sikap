@@ -18,14 +18,14 @@ import Delete from "../../../Shared/Delete";
 //import component pagination
 import Pagination from "../../../Shared/Pagination";
 
-export default function CityIndex() {
-    //destruct props "citys"
-    const { citys } = usePage().props;
+export default function SubdistrictIndex() {
+    //destruct props "subdistricts"
+    const { subdistricts } = usePage().props;
 
     return (
         <>
             <Head>
-                <title>City - SIKAP</title>
+                <title>Kecamatan - SIKAP</title>
             </Head>
             <LayoutAccount>
                 <div className="row mt-5">
@@ -33,7 +33,7 @@ export default function CityIndex() {
                         <div className="row">
                             <div className="col-md-3 col-12 mb-2">
                                 <Link
-                                    href="/admin/citys/create"
+                                    href="/admin/subdistricts/create"
                                     className="btn btn-md btn-primary border-0 shadow w-100"
                                     type="button"
                                 >
@@ -42,7 +42,7 @@ export default function CityIndex() {
                                 </Link>
                             </div>
                             <div className="col-md-9 col-12 mb-2">
-                                <Search URL={"/admin/citys"} />
+                                <Search URL={"/admin/subdistricts"} />
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ export default function CityIndex() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> City
+                                    <i className="fa fa-home"></i> Kecamatan
                                 </span>
                             </div>
                             <div className="card-body">
@@ -70,7 +70,13 @@ export default function CityIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Name
+                                                    Name Kota
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Name Kecamatan
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -81,34 +87,35 @@ export default function CityIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {citys.data.map((city, index) => (
+                                            {subdistricts.data.map((subdistrict, index) => (
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
-                                                            (citys.current_page -
+                                                            (subdistricts.current_page -
                                                                 1) *
-                                                                citys.per_page}
+                                                                subdistricts.per_page}
                                                     </td>
-                                                    <td>{city.name}</td>
+                                                    <td>{subdistrict.city.name}</td>
+                                                    <td>{subdistrict.name}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
-                                                            "citys.edit",
+                                                            "subdistricts.edit",
                                                         ]) && (
                                                             <Link
-                                                                href={`/admin/citys/${city.id}/edit`}
+                                                                href={`/admin/subdistricts/${subdistrict.id}/edit`}
                                                                 className="btn btn-primary btn-sm me-2"
                                                             >
                                                                 <i className="fa fa-pencil-alt"></i>
                                                             </Link>
                                                         )}
                                                         {hasAnyPermission([
-                                                            "citys.delete",
+                                                            "subdistricts.delete",
                                                         ]) && (
                                                             <Delete
                                                                 URL={
-                                                                    "/admin/citys"
+                                                                    "/admin/subdistricts"
                                                                 }
-                                                                id={city.id}
+                                                                id={subdistrict.id}
                                                             />
                                                         )}
                                                     </td>
@@ -119,7 +126,7 @@ export default function CityIndex() {
                                 </div>
                                 <br />
                                 <Pagination
-                                    links={citys.links}
+                                    links={subdistricts.links}
                                     align={"end"}
                                 />
                             </div>

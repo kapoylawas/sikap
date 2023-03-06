@@ -13,24 +13,9 @@ export default function Sidebar() {
 
     return (
         <>
-            {/* <div className="list-group list-group-flush">
-                {hasAnyPermission(['dashboard.index']) && 
-                    <Link href="/admin/dashboard" className={`${ url.startsWith('/admin/dashboard') ? "active list-group-item list-group-item-action list-group-item-light p-3" : "list-group-item list-group-item-action list-group-item-light p-3"}`}><i className="fa fa-tachometer-alt me-2"></i> Dashboard</Link>
-                }
-                {hasAnyPermission(['roles.index']) && 
-                    <Link href="/admin/roles" className={`${ url.startsWith('/admin/roles') ? "active list-group-item list-group-item-action list-group-item-light p-3" : "list-group-item list-group-item-action list-group-item-light p-3"}`}><i className="fa fa-shield-alt me-2"></i> Roles</Link>
-                }
-                {hasAnyPermission(['permissions.index']) && 
-                    <Link href="/admin/permissions" className={`${ url.startsWith('/admin/permissions') ? "active list-group-item list-group-item-action list-group-item-light p-3" : "list-group-item list-group-item-action list-group-item-light p-3"}`}><i className="fa fa-key me-2"></i> Permissions</Link>
-                }
-                {hasAnyPermission(['users.index']) && 
-                    <Link href="/admin/users" className={`${ url.startsWith('/admin/users') ? "active list-group-item list-group-item-action list-group-item-light p-3" : "list-group-item list-group-item-action list-group-item-light p-3"}`}><i className="fa fa-users me-2"></i> Users</Link>
-                }
-            </div> */}
-
             <nav
                 id="sidebarMenu"
-                class="sidebar d-lg-block bg-black text-white collapse"
+                className="sidebar d-lg-block bg-black text-white collapse"
                 data-simplebar
             >
                 <div className="sidebar-inner px-4 pt-3">
@@ -69,7 +54,7 @@ export default function Sidebar() {
                                             width="20"
                                             height="20"
                                             fill="currentColor"
-                                            class="bi bi-wallet-fill me-3"
+                                            className="bi bi-wallet-fill me-3"
                                             viewBox="0 0 16 16"
                                         >
                                             <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v2h6a.5.5 0 0 1 .5.5c0 .253.08.644.306.958.207.288.557.542 1.194.542.637 0 .987-.254 1.194-.542.226-.314.306-.705.306-.958a.5.5 0 0 1 .5-.5h6v-2A1.5 1.5 0 0 0 14.5 2h-13z" />
@@ -135,7 +120,7 @@ export default function Sidebar() {
                             <>
                                 <li
                                     role="separator"
-                                    class="dropdown-divider mt-2 mb-2 border-gray-700"
+                                    className="dropdown-divider mt-2 mb-2 border-gray-700"
                                 ></li>
                                 <li
                                     className={`${
@@ -155,7 +140,7 @@ export default function Sidebar() {
                                                     width="18"
                                                     height="18"
                                                     fill="currentColor"
-                                                    class="bi bi-person-lines-fill me-2"
+                                                    className="bi bi-person-lines-fill me-2"
                                                     viewBox="0 0 16 16"
                                                 >
                                                     <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
@@ -189,7 +174,7 @@ export default function Sidebar() {
                                                 width="20"
                                                 height="20"
                                                 fill="currentColor"
-                                                class="bi bi-diagram-3 me-2"
+                                                className="bi bi-diagram-3 me-2"
                                                 viewBox="0 0 16 16"
                                             >
                                                 <path
@@ -226,7 +211,7 @@ export default function Sidebar() {
                                                     width="20"
                                                     height="20"
                                                     fill="currentColor"
-                                                    class="bi bi-person-add me-2"
+                                                    className="bi bi-person-add me-2"
                                                     viewBox="0 0 16 16"
                                                 >
                                                     <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
@@ -241,7 +226,7 @@ export default function Sidebar() {
                                 </li>
                                 <li
                                     role="separator"
-                                    class="dropdown-divider mt-2 mb-2 border-gray-700"
+                                    className="dropdown-divider mt-2 mb-2 border-gray-700"
                                 ></li>
                             </>
                         )}
@@ -266,7 +251,7 @@ export default function Sidebar() {
                                                     width="20"
                                                     height="20"
                                                     fill="currentColor"
-                                                    class="bi bi-building me-2"
+                                                    className="bi bi-building me-2"
                                                     viewBox="0 0 16 16"
                                                 >
                                                     <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1ZM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1ZM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1Zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z" />
@@ -275,6 +260,42 @@ export default function Sidebar() {
                                             </span>
                                             <span className="sidebar-text">
                                                 Kota
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+
+                        {hasAnyPermission(["subdistricts.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/subdistricts")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/subdistricts"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    className="bi bi-buildings me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z" />
+                                                    <path d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z" />
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                Kecamatan
                                             </span>
                                         </span>
                                     </Link>
