@@ -13,22 +13,42 @@ import { Inertia } from "@inertiajs/inertia";
 //import Sweet Alert
 import Swal from "sweetalert2";
 
-export default function SubdistrictCreate() {
-    //destruct props "errors" & "categories"
+import axios from "axios";
+
+export default function VillageCreate() {
     const { errors, cities } = usePage().props;
 
     const [cityID, setCityID] = useState("");
+    const [kecamatanID, setKecamatanID] = useState("");
+    const [kecamatans, setKecamatans] = useState([]);
     const [name, setName] = useState("");
+
+    //method getkecamatanByKota
+    const getkecamatanByKota = async (city_id) => {
+        //set state province ID
+        setCityID(city_id);
+
+        //get cities by province id
+        axios.get(`/kecamatan?city_id=${city_id}`).then((response) => {
+            setKecamatans(response.data);
+        });
+    };
+
+    const showKelurahan = (subdistrict_id) => {
+        //set state cityID
+        setKecamatanID(subdistrict_id);
+    };
 
     const storeKelurahan = async (e) => {
         e.preventDefault();
 
         //sending data
         Inertia.post(
-            "/admin/subdistricts",
+            "/admin/villages",
             {
                 //data
                 city_id: cityID,
+                subdistrict_id: kecamatanID,
                 name: name,
             },
             {
@@ -53,7 +73,7 @@ export default function SubdistrictCreate() {
             </Head>
             <LayoutAccount>
                 <Link
-                    href="/admin/subdistricts"
+                    href="/admin/villages"
                     className="btn btn-md btn-primary border-0 shadow"
                     type="button"
                 >
@@ -65,7 +85,8 @@ export default function SubdistrictCreate() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> Add New Kecamatan
+                                    <i className="fa fa-home"></i> Add New
+                                    Kelurahan
                                 </span>
                             </div>
                             <div className="card-body">
@@ -80,7 +101,7 @@ export default function SubdistrictCreate() {
                                                     className="form-select"
                                                     value={cityID}
                                                     onChange={(e) =>
-                                                        setCityID(
+                                                        getkecamatanByKota(
                                                             e.target.value
                                                         )
                                                     }
@@ -105,6 +126,41 @@ export default function SubdistrictCreate() {
                                             )}
                                         </div>
                                     </div>
+                                    <div className="row">
+                                        <div className="mb-3">
+                                            <label className="form-label">
+                                                Kecamatan
+                                            </label>
+                                            <select
+                                                className="form-select"
+                                                onChange={(e) =>
+                                                    showKelurahan(
+                                                        e.target.value
+                                                    )
+                                                }
+                                            >
+                                                <option value="">
+                                                    -- Select Kelurahan --
+                                                </option>
+                                                {kecamatans.map(
+                                                    (kecamatan, index) => (
+                                                        <option
+                                                            key={index}
+                                                            value={kecamatan.id}
+                                                        >
+                                                            {kecamatan.name}
+                                                        </option>
+                                                    )
+                                                )}
+                                            </select>
+                                            {errors.subdistrict_id && (
+                                                <div className="alert alert-danger mt-2">
+                                                    {errors.subdistrict_id}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
                                             Name
@@ -116,7 +172,7 @@ export default function SubdistrictCreate() {
                                             onChange={(e) =>
                                                 setName(e.target.value)
                                             }
-                                            placeholder="Enter Kecamatan Name"
+                                            placeholder="Enter Kelurahan/Desa Name"
                                         />
                                     </div>
                                     {errors.name && (

@@ -35,6 +35,9 @@ Route::post('/register', [\App\Http\Controllers\Auth\RegisterController::class, 
 //route logout
 Route::post('/logout', \App\Http\Controllers\Auth\LogoutController::class)->name('logout')->middleware('auth');
 
+// get kecamatan by id
+Route::get('/kecamatan', [\App\Http\Controllers\Admin\VillageController::class, 'getKecamatan'])->name('kecamatan');
+
 //prefix "admin"
 Route::prefix('admin')->group(function () {
 
@@ -62,5 +65,9 @@ Route::prefix('admin')->group(function () {
        //route resource subdistricts
        Route::resource('/subdistricts', \App\Http\Controllers\Admin\SubdistrictController::class, ['as' => 'admin'])
        ->middleware('permission:subdistricts.index|subdistricts.create|subdistricts.edit|subdistricts.delete');
+
+       //route resource villages
+       Route::resource('/villages', \App\Http\Controllers\Admin\VillageController::class, ['as' => 'admin'])
+       ->middleware('permission:villages.index|villages.create|villages.edit|villages.delete');
     });
 });

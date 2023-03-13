@@ -10,7 +10,7 @@ import { Head, usePage } from "@inertiajs/inertia-react";
 //import permissions
 import hasAnyPermission from "../../../Utils/Permissions";
 
-export default function Dashboard() {
+export default function DashboardIndex() {
     //destruct props
     const { auth, user } = usePage().props;
 

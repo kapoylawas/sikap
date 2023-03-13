@@ -1,14 +1,5 @@
 //import React
-import React, { useState } from "react";
-
-//import component bootstrap
-import { NavDropdown } from "react-bootstrap";
-
-//import usePage
-import { usePage } from "@inertiajs/inertia-react";
-
-//import inertia adapter
-import { Inertia } from "@inertiajs/inertia";
+import React from "react";
 
 //import Sidebar
 import Sidebar from "../Components/Sidebar";
@@ -16,37 +7,6 @@ import Sidebar from "../Components/Sidebar";
 import Navbar from "../Components/Navbar";
 
 export default function LayoutAccount({ children }) {
-    //get props auth
-    const { auth } = usePage().props;
-
-    //state toggle
-    const [sidebarToggle, setSidebarToggle] = useState(false);
-
-    //function toggle hanlder
-    const sidebarToggleHandler = (e) => {
-        e.preventDefault();
-
-        if (!sidebarToggle) {
-            //add class on body
-            document.body.classList.add("sb-sidenav-toggled");
-
-            //set state "sidebarToggle" to true
-            setSidebarToggle(true);
-        } else {
-            //remove class on body
-            document.body.classList.remove("sb-sidenav-toggled");
-
-            //set state "sidebarToggle" to false
-            setSidebarToggle(false);
-        }
-    };
-
-    //function logout
-    const logoutHandler = async (e) => {
-        e.preventDefault();
-
-        Inertia.post("/logout");
-    };
 
     return (
         <>
