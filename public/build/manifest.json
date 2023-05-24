@@ -1,200 +1,256 @@
 {
-  "_Admin-79d6a574.js": {
-    "file": "assets/Admin-79d6a574.js",
+  "_Admin-5be2f07b.js": {
+    "file": "assets/Admin-5be2f07b.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_Delete-41f8007c.js": {
-    "file": "assets/Delete-41f8007c.js",
+  "_Delete-b30e5a86.js": {
+    "file": "assets/Delete-b30e5a86.js",
     "imports": [
       "resources/js/app.jsx",
-      "_sweetalert2.all-d007068d.js"
+      "_sweetalert2.all-ee54a1fb.js"
     ]
   },
-  "_Pagination-16a502db.js": {
-    "file": "assets/Pagination-16a502db.js",
+  "_Pagination-b0eff79b.js": {
+    "file": "assets/Pagination-b0eff79b.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_sweetalert2.all-d007068d.js": {
-    "file": "assets/sweetalert2.all-d007068d.js",
+  "_Search-9cd3c924.js": {
+    "file": "assets/Search-9cd3c924.js",
     "imports": [
       "resources/js/app.jsx"
     ]
+  },
+  "_sweetalert2.all-ee54a1fb.js": {
+    "file": "assets/sweetalert2.all-ee54a1fb.js",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Admin/Banks/Create.jsx": {
+    "file": "assets/Create-b5afcd77.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Banks/Create.jsx"
+  },
+  "resources/js/Pages/Admin/Banks/Edit.jsx": {
+    "file": "assets/Edit-be5740d5.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Banks/Edit.jsx"
+  },
+  "resources/js/Pages/Admin/Banks/Index.jsx": {
+    "file": "assets/Index-014773a0.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Delete-b30e5a86.js",
+      "_Pagination-b0eff79b.js",
+      "_sweetalert2.all-ee54a1fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Banks/Index.jsx"
   },
   "resources/js/Pages/Admin/City/Create.jsx": {
-    "file": "assets/Create-51e5e670.js",
+    "file": "assets/Create-9606a6a3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/City/Create.jsx"
   },
   "resources/js/Pages/Admin/City/Edit.jsx": {
-    "file": "assets/Edit-669454fe.js",
+    "file": "assets/Edit-313e9940.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/City/Edit.jsx"
   },
   "resources/js/Pages/Admin/City/Index.jsx": {
-    "file": "assets/Index-8da02985.js",
+    "file": "assets/Index-0a85e7de.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_Pagination-16a502db.js",
-      "_Delete-41f8007c.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Delete-b30e5a86.js",
+      "_Pagination-b0eff79b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/City/Index.jsx"
   },
   "resources/js/Pages/Admin/Dashboard/Index.jsx": {
-    "file": "assets/Index-0b888ba3.js",
+    "file": "assets/Index-afb2ebe5.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js"
+      "_Admin-5be2f07b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Dashboard/Index.jsx"
   },
-  "resources/js/Pages/Admin/Permissions/Index.jsx": {
-    "file": "assets/Index-b750a069.js",
+  "resources/js/Pages/Admin/Jobs/Index.jsx": {
+    "file": "assets/Index-f107075f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_Pagination-16a502db.js"
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_sweetalert2.all-ee54a1fb.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "resources/js/Pages/Admin/Jobs/Index.jsx"
+  },
+  "resources/js/Pages/Admin/Permissions/Index.jsx": {
+    "file": "assets/Index-c709f89b.js",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Pagination-b0eff79b.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Permissions/Index.jsx"
   },
   "resources/js/Pages/Admin/Roles/Create.jsx": {
-    "file": "assets/Create-59fa04d2.js",
+    "file": "assets/Create-a2da0f48.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Roles/Create.jsx"
   },
   "resources/js/Pages/Admin/Roles/Edit.jsx": {
-    "file": "assets/Edit-a65228e5.js",
+    "file": "assets/Edit-01e8aec2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Roles/Edit.jsx"
   },
   "resources/js/Pages/Admin/Roles/Index.jsx": {
-    "file": "assets/Index-8e91310f.js",
+    "file": "assets/Index-110a1cba.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_Pagination-16a502db.js",
-      "_Delete-41f8007c.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Delete-b30e5a86.js",
+      "_Pagination-b0eff79b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Roles/Index.jsx"
   },
   "resources/js/Pages/Admin/Subdistrict/Create.jsx": {
-    "file": "assets/Create-ea81bea7.js",
+    "file": "assets/Create-fb6c3241.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Subdistrict/Create.jsx"
   },
   "resources/js/Pages/Admin/Subdistrict/Edit.jsx": {
-    "file": "assets/Edit-f49d8b83.js",
+    "file": "assets/Edit-b8ab364b.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Subdistrict/Edit.jsx"
   },
   "resources/js/Pages/Admin/Subdistrict/Index.jsx": {
-    "file": "assets/Index-5e2dc2ff.js",
+    "file": "assets/Index-980993f4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_Pagination-16a502db.js",
-      "_Delete-41f8007c.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Delete-b30e5a86.js",
+      "_Pagination-b0eff79b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Subdistrict/Index.jsx"
   },
   "resources/js/Pages/Admin/Users/Create.jsx": {
-    "file": "assets/Create-20692733.js",
+    "file": "assets/Create-4f19dca8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Users/Create.jsx"
   },
   "resources/js/Pages/Admin/Users/Edit.jsx": {
-    "file": "assets/Edit-2c6dff15.js",
+    "file": "assets/Edit-19796de6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Users/Edit.jsx"
   },
   "resources/js/Pages/Admin/Users/Index.jsx": {
-    "file": "assets/Index-eaf4f9dc.js",
+    "file": "assets/Index-60c1a324.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_Pagination-16a502db.js",
-      "_Delete-41f8007c.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Delete-b30e5a86.js",
+      "_Pagination-b0eff79b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Users/Index.jsx"
   },
   "resources/js/Pages/Admin/Village/Create.jsx": {
-    "file": "assets/Create-f379082a.js",
+    "file": "assets/Create-fb15a5fb.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Village/Create.jsx"
   },
   "resources/js/Pages/Admin/Village/Index.jsx": {
-    "file": "assets/Index-1c7b5b14.js",
+    "file": "assets/Index-e4936399.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-79d6a574.js",
-      "_Pagination-16a502db.js",
-      "_Delete-41f8007c.js",
-      "_sweetalert2.all-d007068d.js"
+      "_Admin-5be2f07b.js",
+      "_Search-9cd3c924.js",
+      "_Delete-b30e5a86.js",
+      "_Pagination-b0eff79b.js",
+      "_sweetalert2.all-ee54a1fb.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Village/Index.jsx"
   },
   "resources/js/Pages/Auth/Login.jsx": {
-    "file": "assets/Login-411b37eb.js",
+    "file": "assets/Login-2e3fbaa2.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -202,7 +258,7 @@
     "src": "resources/js/Pages/Auth/Login.jsx"
   },
   "resources/js/Pages/Auth/Register.jsx": {
-    "file": "assets/Register-abd965dd.js",
+    "file": "assets/Register-2aadcae0.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -211,10 +267,14 @@
   },
   "resources/js/app.jsx": {
     "dynamicImports": [
+      "resources/js/Pages/Admin/Banks/Create.jsx",
+      "resources/js/Pages/Admin/Banks/Edit.jsx",
+      "resources/js/Pages/Admin/Banks/Index.jsx",
       "resources/js/Pages/Admin/City/Create.jsx",
       "resources/js/Pages/Admin/City/Edit.jsx",
       "resources/js/Pages/Admin/City/Index.jsx",
       "resources/js/Pages/Admin/Dashboard/Index.jsx",
+      "resources/js/Pages/Admin/Jobs/Index.jsx",
       "resources/js/Pages/Admin/Permissions/Index.jsx",
       "resources/js/Pages/Admin/Roles/Create.jsx",
       "resources/js/Pages/Admin/Roles/Edit.jsx",
@@ -230,7 +290,7 @@
       "resources/js/Pages/Auth/Login.jsx",
       "resources/js/Pages/Auth/Register.jsx"
     ],
-    "file": "assets/app-629792c3.js",
+    "file": "assets/app-52ca4d22.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }

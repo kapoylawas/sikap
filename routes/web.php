@@ -69,5 +69,13 @@ Route::prefix('admin')->group(function () {
        //route resource villages
        Route::resource('/villages', \App\Http\Controllers\Admin\VillageController::class, ['as' => 'admin'])
        ->middleware('permission:villages.index|villages.create|villages.edit|villages.delete');
+
+       //route resource bank
+       Route::resource('/banks', \App\Http\Controllers\Admin\BanksController::class, ['as' => 'admin'])
+       ->middleware('permission:banks.index|banks.create|banks.edit|banks.delete');
+
+        // route resource kelompok jabatan
+       Route::resource('/jobs', \App\Http\Controllers\Admin\KelompokJabatanController::class, ['as' => 'admin'])
+       ->middleware('permission:jobs.index|jobs.create|jobs.edit|jobs.delete');
     });
 });

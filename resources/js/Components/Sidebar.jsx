@@ -341,6 +341,114 @@ export default function Sidebar() {
                                 ></li>
                             </>
                         )}
+                        {hasAnyPermission(["banks.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/banks")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/banks"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    class="bi bi-bank me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z" />
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                Bank
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+                        {hasAnyPermission(["jobs.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/jobs")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/jobs"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    class="bi bi-person-bounding-box me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z" />
+                                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                Kelompok Jabatan
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+                        {hasAnyPermission(["jabatans.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/jabatans")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/jabatans"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    class="bi bi-person-workspace me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                                                    <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z" />
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                Jabatan
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
+                                <li
+                                    role="separator"
+                                    className="dropdown-divider mt-2 mb-2 border-gray-700"
+                                ></li>
+                            </>
+                        )}
                     </ul>
                 </div>
             </nav>
