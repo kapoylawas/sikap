@@ -77,5 +77,9 @@ Route::prefix('admin')->group(function () {
         // route resource kelompok jabatan
        Route::resource('/jobs', \App\Http\Controllers\Admin\KelompokJabatanController::class, ['as' => 'admin'])
        ->middleware('permission:jobs.index|jobs.create|jobs.edit|jobs.delete');
+
+        // route resource jabatan
+       Route::resource('/jabatans', \App\Http\Controllers\Admin\JobsController::class, ['as' => 'admin'])
+       ->middleware('permission:jabatans.index|jabatans.create|jabatans.edit|jabatans.delete');
     });
 });

@@ -46,87 +46,86 @@ export default function JobsIndex() {
                         </div>
                     </div>
                 </div>
-                <div className="row mt-2 mb-4">
-                <div className="row mt-2 mb-4">
-                    <div className="col-12">
-                        <div className="card border-0 rounded shadow-sm border-top-success">
-                            <div className="card-header">
-                                <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> Master Kelompok Jabatan
-                                </span>
-                            </div>
-                            <div className="card-body">
-                                <div className="table-responsive">
-                                    <table className="table table-bordered table-striped table-hovered">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "5%" }}
-                                                >
-                                                    No.
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Name
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Actions
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {jobs.data.map((job, index) => (
-                                                <tr key={index}>
-                                                    <td className="text-center">
-                                                        {++index +
-                                                            (jobs.current_page -
-                                                                1) *
-                                                                jobs.per_page}
-                                                    </td>
-                                                    <td>{job.name}</td>
-                                                    <td className="text-center">
-                                                        {hasAnyPermission([
-                                                            "jobs.edit",
-                                                        ]) && (
-                                                            <Link
-                                                                href={`/admin/jobs/${job.id}/edit`}
-                                                                className="btn btn-primary btn-sm me-2"
-                                                            >
-                                                                <i className="fa fa-pencil-alt"></i>
-                                                            </Link>
-                                                        )}
-                                                        {hasAnyPermission([
-                                                            "jobs.delete",
-                                                        ]) && (
-                                                            <Delete
-                                                                URL={
-                                                                    "/admin/jobs"
-                                                                }
-                                                                id={job.id}
-                                                            />
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                    <div className="row mt-2 mb-4">
+                        <div className="col-12">
+                            <div className="card border-0 rounded shadow-sm border-top-success">
+                                <div className="card-header">
+                                    <span className="font-weight-bold">
+                                        <i className="fa fa-home"></i> Master
+                                        Kelompok Jabatan
+                                    </span>
                                 </div>
-                                <br />
-                                <Pagination
-                                    links={jobs.links}
-                                    align={"end"}
-                                />
+                                <div className="card-body">
+                                    <div className="table-responsive">
+                                        <table className="table table-bordered table-striped table-hovered">
+                                            <thead>
+                                                <tr>
+                                                    <th
+                                                        scope="col"
+                                                        style={{ width: "5%" }}
+                                                    >
+                                                        No.
+                                                    </th>
+                                                    <th
+                                                        scope="col"
+                                                        style={{ width: "15%" }}
+                                                    >
+                                                        Name
+                                                    </th>
+                                                    <th
+                                                        scope="col"
+                                                        style={{ width: "15%" }}
+                                                    >
+                                                        Actions
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {jobs.data.map((job, index) => (
+                                                    <tr key={index}>
+                                                        <td className="text-center">
+                                                            {++index +
+                                                                (jobs.current_page -
+                                                                    1) *
+                                                                    jobs.per_page}
+                                                        </td>
+                                                        <td>{job.name}</td>
+                                                        <td className="text-center">
+                                                            {hasAnyPermission([
+                                                                "jobs.edit",
+                                                            ]) && (
+                                                                <Link
+                                                                    href={`/admin/jobs/${job.id}/edit`}
+                                                                    className="btn btn-primary btn-sm me-2"
+                                                                >
+                                                                    <i className="fa fa-pencil-alt"></i>
+                                                                </Link>
+                                                            )}
+                                                            {hasAnyPermission([
+                                                                "jobs.delete",
+                                                            ]) && (
+                                                                <Delete
+                                                                    URL={
+                                                                        "/admin/jobs"
+                                                                    }
+                                                                    id={job.id}
+                                                                />
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <br />
+                                    <Pagination
+                                        links={jobs.links}
+                                        align={"end"}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                </div>
             </LayoutAccount>
         </>
     );
