@@ -81,5 +81,9 @@ Route::prefix('admin')->group(function () {
         // route resource jabatan
        Route::resource('/jabatans', \App\Http\Controllers\Admin\JobsController::class, ['as' => 'admin'])
        ->middleware('permission:jabatans.index|jabatans.create|jabatans.edit|jabatans.delete');
+
+        // route resource biodata
+       Route::resource('/biodatas', \App\Http\Controllers\Admin\BiodatasController::class, ['as' => 'admin'])
+       ->middleware('permission:biodatas.index|biodatas.create|biodatas.edit|biodatas.delete');
     });
 });

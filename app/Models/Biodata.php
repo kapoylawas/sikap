@@ -50,21 +50,21 @@ class Biodata extends Model
     protected function ktpImage(): Attribute
     {
         return Attribute::make(
-            get: fn ($image) => asset('/storage/ktp/' . $image),
+            get: fn ($ktpImage) => asset('/storage/ktp/' . $ktpImage),
         );
     }
 
     protected function bukutabunganImage(): Attribute
     {
         return Attribute::make(
-            get: fn ($image) => asset('/storage/bukutabungan/' . $image),
+            get: fn ($bukutabunganImage) => asset('/storage/bukutabungan/' . $bukutabunganImage),
         );
     }
 
     protected function fotoImage(): Attribute
     {
         return Attribute::make(
-            get: fn ($image) => asset('/storage/foto/' . $image),
+            get: fn ($fotoImage) => asset('/storage/foto/' . $fotoImage),
         );
     }
 }

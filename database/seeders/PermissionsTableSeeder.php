@@ -74,5 +74,11 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'banks.create', 'guard_name' => 'web']);
         Permission::create(['name' => 'banks.edit', 'guard_name' => 'web']);
         Permission::create(['name' => 'banks.delete', 'guard_name' => 'web']);
+
+        //permission biodatas
+        Permission::create(['name' => 'biodatas.index', 'guard_name' => 'web']);
+        Permission::create(['name' => 'biodatas.create', 'guard_name' => 'web']);
+        Permission::create(['name' => 'biodatas.edit', 'guard_name' => 'web']);
+        Permission::create(['name' => 'biodatas.delete', 'guard_name' => 'web']);
     }
 }

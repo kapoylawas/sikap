@@ -24,7 +24,7 @@ class SubdistrictController extends Controller
 
     public function create()
     {
-        //get all categories
+        //get all city
         $cities = City::all();
 
         return inertia('Admin/Subdistrict/Create', [
