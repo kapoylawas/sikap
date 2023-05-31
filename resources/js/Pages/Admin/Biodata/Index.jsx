@@ -19,6 +19,8 @@ import Delete from "../../../Shared/Delete";
 import Pagination from "../../../Shared/Pagination";
 
 export default function BiodatasIndex() {
+    const { biodatas } = usePage().props;
+
     return (
         <>
             <Head>
@@ -30,7 +32,7 @@ export default function BiodatasIndex() {
                         <div className="row">
                             <div className="col-md-3 col-12 mb-2">
                                 <Link
-                                    href="/admin/biodata/create"
+                                    href="/admin/biodatas/create"
                                     className="btn btn-md btn-primary border-0 shadow w-100"
                                     type="button"
                                 >
@@ -45,7 +47,75 @@ export default function BiodatasIndex() {
                     </div>
                 </div>
                 <div className="row mt-2 mb-4">
-
+                <div className="col-12">
+                        <div className="card border-0 rounded shadow-sm border-top-success">
+                            <div className="card-header">
+                                <span className="font-weight-bold">
+                                    <i className="fa fa-home"></i> City
+                                </span>
+                            </div>
+                            <div className="card-body">
+                                <div className="table-responsive">
+                                    <table className="table table-bordered table-striped table-hovered">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "5%" }}
+                                                >
+                                                    No.
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Kota
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Kecamatan
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Kelurahan/desa
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Name
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Nik
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Actions
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br />
+                                <Pagination
+                                    links={biodatas.links}
+                                    align={"end"}
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </LayoutAccount>
         </>

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Biodata;
+use App\Models\City;
+use App\Models\Subdistrict;
+use App\Models\Village;
 use Illuminate\Http\Request;
 
 class BiodatasController extends Controller
@@ -19,6 +22,20 @@ class BiodatasController extends Controller
 
         return inertia('Admin/Biodata/Index', [
             'biodatas' => $biodatas,
+        ]);
+    }
+
+    public function create()
+    {
+        $cities = City::all();
+        $subdistricts = Subdistrict::all();
+        $villages = Village::all();
+        
+        //return inertia
+        return inertia('Admin/Biodata/Create', [
+            'cities' => $cities,
+            'subdistricts' => $subdistricts,
+            'villages' => $villages,
         ]);
     }
 }
