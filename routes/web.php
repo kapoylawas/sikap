@@ -85,5 +85,10 @@ Route::prefix('admin')->group(function () {
         // route resource biodata
        Route::resource('/biodatas', \App\Http\Controllers\Admin\BiodatasController::class, ['as' => 'admin'])
        ->middleware('permission:biodatas.index|biodatas.create|biodatas.edit|biodatas.delete');
+
+       // route resource puskesmas
+       Route::resource('/puskesmas', \App\Http\Controllers\Admin\PuskesmasController::class, ['as' => 'admin'])
+       ->middleware('permission:puskesmas.index|puskesmas.create|puskesmas.edit|puskesmas.delete');
+
     });
 });
