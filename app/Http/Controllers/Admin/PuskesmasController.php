@@ -34,14 +34,18 @@ class PuskesmasController extends Controller
          * validate
          */
         $this->validate($request, [
-            'name'          => 'required|unique:cities',
-            'puskesmas'          => 'required',
+            'name'          => 'required',
+            'alamat'        => 'required',
+            'email'         => 'required',
+            'phone'         => 'required',
         ]);
 
         //create puskesmas
         Puskesmas::create([
-            'name'          => $request->name,
-            'puskesmas'     => $request->puskesmas,
+            'name'       => $request->name,
+            'alamat'     => $request->alamat,
+            'email'      => $request->email,
+            'phone'      => $request->phone,
         ]);
 
         //redirect
@@ -55,7 +59,10 @@ class PuskesmasController extends Controller
 
         //render with inertia
         return inertia('Admin/Puskesmas/Edit', [
-            'puskesmas'          => $puskesmas,
+            'name'    => $name,
+            'alamat'  => $alamat,
+            'email'   => $email,
+            'phone'   => $phone,
         ]);
     }
 
@@ -66,13 +73,17 @@ class PuskesmasController extends Controller
          */
         $this->validate($request, [
             'name'          => 'required',
-            'puskesmas'     => 'required',
+            'alamat'        => 'required',
+            'email'         => 'required',
+            'phone'         => 'required',
         ]);
 
         //update puskesmas
         $bank->update([
-            'name' => $request->name,
-            'puskesmas' => $request->puskesmas
+            'name'       => $request->name,
+            'alamat'     => $request->alamat,
+            'email'      => $request->email,
+            'phone'      => $request->phone,
         ]);
 
         //redirect
@@ -82,10 +93,10 @@ class PuskesmasController extends Controller
     public function destroy($id)
     {
         //find role by ID
-        $bank = Bank::findOrFail($id);
+        $puskesmas = Puskesmas::findOrFail($id);
 
         //delete role
-        $bank->delete();
+        $puskesmas->delete();
 
         //redirect
         return redirect()->route('admin.puskesmas.index');

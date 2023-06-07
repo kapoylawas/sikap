@@ -11,7 +11,7 @@ class Puskesmas extends Model
 
     protected $fillable = [
         'name',
-        'puskesmas',
+        'alamat',
         'email',
         'phone',
     ];

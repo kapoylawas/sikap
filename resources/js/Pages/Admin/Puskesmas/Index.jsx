@@ -107,7 +107,9 @@ export default function PuskesmasIndex() {
                                                                 puskesmas.per_page}
                                                     </td>
                                                     <td>{puskesmas.name}</td>
-                                                    <td>{puskesmas.puskesmas}</td>
+                                                    <td>{puskesmas.alamat}</td>
+                                                    <td>{puskesmas.email}</td>
+                                                    <td>{puskesmas.phone}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
                                                             "puskesmas.edit",
