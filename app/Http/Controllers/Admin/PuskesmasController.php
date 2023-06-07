@@ -59,10 +59,7 @@ class PuskesmasController extends Controller
 
         //render with inertia
         return inertia('Admin/Puskesmas/Edit', [
-            'name'    => $name,
-            'alamat'  => $alamat,
-            'email'   => $email,
-            'phone'   => $phone,
+            'puskesmas'    => $puskesmas,
         ]);
     }
 
@@ -79,7 +76,7 @@ class PuskesmasController extends Controller
         ]);
 
         //update puskesmas
-        $bank->update([
+        $puskesmas->update([
             'name'       => $request->name,
             'alamat'     => $request->alamat,
             'email'      => $request->email,

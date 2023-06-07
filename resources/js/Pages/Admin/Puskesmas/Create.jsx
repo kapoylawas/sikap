@@ -86,27 +86,27 @@ export default function PuskesmasCreate() {
                                         <label className="form-label fw-bold">Alamat</label>
                                         <input type="text" className="form-control" value={alamat} onChange={(e) => setAlamat(e.target.value)} placeholder="Masukkan Alamat" />
                                     </div>
-                                    {errors.name && (
+                                    {errors.alamat && (
                                         <div className="alert alert-danger">
-                                            {errors.name}
+                                            {errors.alamat}
                                         </div>
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">Email</label>
                                         <input type="text" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukkan Email" />
                                     </div>
-                                    {errors.name && (
+                                    {errors.email && (
                                         <div className="alert alert-danger">
-                                            {errors.name}
+                                            {errors.email}
                                         </div>
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">Phone</label>
                                         <input type="text" className="form-control" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Masukkan No. Telpon" />
                                     </div>
-                                    {errors.name && (
+                                    {errors.phone && (
                                         <div className="alert alert-danger">
-                                            {errors.name}
+                                            {errors.phone}
                                         </div>
                                     )}
 

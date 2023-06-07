@@ -98,7 +98,7 @@ export default function PuskesmasIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {puskesmas.data.map((puskesmas, index) => (
+                                            {puskesmas.data.map((pusk, index) => (
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
@@ -106,16 +106,16 @@ export default function PuskesmasIndex() {
                                                                 1) *
                                                                 puskesmas.per_page}
                                                     </td>
-                                                    <td>{puskesmas.name}</td>
-                                                    <td>{puskesmas.alamat}</td>
-                                                    <td>{puskesmas.email}</td>
-                                                    <td>{puskesmas.phone}</td>
+                                                    <td>{pusk.name}</td>
+                                                    <td>{pusk.alamat}</td>
+                                                    <td>{pusk.email}</td>
+                                                    <td>{pusk.phone}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
                                                             "puskesmas.edit",
                                                         ]) && (
                                                             <Link
-                                                                href={`/admin/puskesmas/${puskesmas.id}/edit`}
+                                                                href={`/admin/puskesmas/${pusk.id}/edit`}
                                                                 className="btn btn-primary btn-sm me-2"
                                                             >
                                                                 <i className="fa fa-pencil-alt"></i>
@@ -128,7 +128,7 @@ export default function PuskesmasIndex() {
                                                                 URL={
                                                                     "/admin/puskesmas"
                                                                 }
-                                                                id={puskesmas.id}
+                                                                id={pusk.id}
                                                             />
                                                         )}
                                                     </td>

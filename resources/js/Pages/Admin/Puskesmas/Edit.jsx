@@ -20,6 +20,8 @@ export default function PuskesmasEdit() {
     //state
     const [name, setName] = useState(puskesmas.name);
     const [alamat, setAlamat] = useState(puskesmas.alamat);
+    const [email, setEmail] = useState(puskesmas.email);
+    const [phone, setPhone] = useState(puskesmas.phone);
 
     const updatePuskesmas = async (e) => {
         e.preventDefault();
@@ -30,8 +32,9 @@ export default function PuskesmasEdit() {
             {
                 //data
                 name: name,
-                puskesmas: puskesmas,
-                
+                alamat: alamat,
+                email: email,
+                phone: phone,
             },
             {
                 onSuccess: () => {
@@ -51,11 +54,11 @@ export default function PuskesmasEdit() {
     return (
         <>
             <Head>
-                <title>Edit Bank - SIKAP</title>
+                <title>Edit Data Puskesmas - SIKAP</title>
             </Head>
             <LayoutAccount>
                 <Link
-                    href="/admin/banks"
+                    href="/admin/puskesmas"
                     className="btn btn-md btn-primary border-0 shadow"
                     type="button"
                 >
@@ -66,13 +69,13 @@ export default function PuskesmasEdit() {
                     <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
-                                <span className="font-weight-bold"><i className="fa fa-home"></i> Add New Bank</span>
+                                <span className="font-weight-bold"><i className="fa fa-home"></i> Edit Data Puskesmas</span>
                             </div>
                             <div className="card-body">
-                                <form onSubmit={updateBank}>
+                                <form onSubmit={updatePuskesmas}>
                                     <div className="mb-3">
-                                        <label className="form-label fw-bold">Bank Name</label>
-                                        <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter Bank Name" />
+                                        <label className="form-label fw-bold">Name</label>
+                                        <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Masukkan Nama" />
                                     </div>
                                     {errors.name && (
                                         <div className="alert alert-danger">
@@ -80,12 +83,30 @@ export default function PuskesmasEdit() {
                                         </div>
                                     )}
                                     <div className="mb-3">
-                                        <label className="form-label fw-bold">Biaya Tranfer</label>
-                                        <input type="number" className="form-control" value={tranfer} onChange={(e) => setTranfer(e.target.value)} placeholder="Enter Nominal Tranfer" />
+                                        <label className="form-label fw-bold">Alamat</label>
+                                        <input type="text" className="form-control" value={alamat} onChange={(e) => setAlamat(e.target.value)} placeholder="Masukkan Alamat" />
                                     </div>
-                                    {errors.tranfer && (
+                                    {errors.alamat && (
                                         <div className="alert alert-danger">
-                                            {errors.tranfer}
+                                            {errors.alamat}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">Email</label>
+                                        <input type="text" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Masukkan Email" />
+                                    </div>
+                                    {errors.email && (
+                                        <div className="alert alert-danger">
+                                            {errors.email}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">Phone</label>
+                                        <input type="text" className="form-control" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Masukkan No. Telpon" />
+                                    </div>
+                                    {errors.phone && (
+                                        <div className="alert alert-danger">
+                                            {errors.phone}
                                         </div>
                                     )}
 

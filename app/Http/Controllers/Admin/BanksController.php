@@ -41,7 +41,7 @@ class BanksController extends Controller
         //create bank
         Bank::create([
             'name'          => $request->name,
-            'tranfer'          => $request->tranfer,
+            'tranfer'       => $request->tranfer,
         ]);
 
         //redirect
