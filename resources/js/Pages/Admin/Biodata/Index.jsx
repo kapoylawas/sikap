@@ -87,6 +87,12 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
+                                                    Bank
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
                                                     Name
                                                 </th>
                                                 <th
@@ -94,6 +100,30 @@ export default function BiodatasIndex() {
                                                     style={{ width: "15%" }}
                                                 >
                                                     Nik
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Alamat
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    No. Rekening
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    No. HP
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Foto KTP
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -115,8 +145,13 @@ export default function BiodatasIndex() {
                                                     <td>{biodata.city_id}</td>
                                                     <td>{biodata.subdistrict_id}</td>
                                                     <td>{biodata.village_id}</td>
+                                                    <td>{biodata.bank_id}</td>
                                                     <td>{biodata.name}</td>
                                                     <td>{biodata.nik}</td>
+                                                    <td>{biodata.alamat}</td>
+                                                    <td>{biodata.norek}</td>
+                                                    <td>{biodata.nohp}</td>
+                                                    <td>{biodata.filektp}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
                                                             "biodatas.edit",
