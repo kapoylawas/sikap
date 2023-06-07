@@ -104,7 +104,43 @@ export default function BiodatasIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                        {biodatas.data.map((biodata, index) => (
+                                                <tr key={index}>
+                                                    <td className="text-center">
+                                                        {++index +
+                                                            (biodatas.current_page -
+                                                                1) *
+                                                                biodatas.per_page}
+                                                    </td>
+                                                    <td>{biodata.city_id}</td>
+                                                    <td>{biodata.subdistrict_id}</td>
+                                                    <td>{biodata.village_id}</td>
+                                                    <td>{biodata.name}</td>
+                                                    <td>{biodata.nik}</td>
+                                                    <td className="text-center">
+                                                        {hasAnyPermission([
+                                                            "biodatas.edit",
+                                                        ]) && (
+                                                            <Link
+                                                                href={`/admin/biodatas/${biodata.id}/edit`}
+                                                                className="btn btn-primary btn-sm me-2"
+                                                            >
+                                                                <i className="fa fa-pencil-alt"></i>
+                                                            </Link>
+                                                        )}
+                                                        {hasAnyPermission([
+                                                            "biodatas.delete",
+                                                        ]) && (
+                                                            <Delete
+                                                                URL={
+                                                                    "/admin/biodatas"
+                                                                }
+                                                                id={biodata.id}
+                                                            />
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            ))}
                                         </tbody>
                                     </table>
                                 </div>
