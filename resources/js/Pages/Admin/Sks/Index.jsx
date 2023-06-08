@@ -32,7 +32,7 @@ export default function SksIndex() {
                         <div className="row">
                             <div className="col-md-3 col-12 mb-2">
                                 <Link
-                                    href="/admin/biodatas/create"
+                                    href="/admin/sks/create"
                                     className="btn btn-md btn-primary border-0 shadow w-100"
                                     type="button"
                                 >
@@ -69,25 +69,37 @@ export default function SksIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
+                                                    Kecamatan
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Jabatan
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Tahun
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
                                                     Nama
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    No. SK
+                                                    Tgl SK
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Kelurahan/desa
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Nik
+                                                    File SK
                                                 </th>
                                                 <th
                                                     scope="col"
