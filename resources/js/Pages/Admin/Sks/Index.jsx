@@ -110,7 +110,45 @@ export default function SksIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            
+                                        {sks.data.map((sk, index) => (
+                                                <tr key={index}>
+                                                    <td className="text-center">
+                                                        {++index +
+                                                            (sks.current_page -
+                                                                1) *
+                                                                sks.per_page}
+                                                    </td>
+                                                    <td>{sk.village}</td>
+                                                    <td>{sk.jabatan}</td>
+                                                    <td>{sk.tahun}</td>
+                                                    <td>{sk.name}</td>
+                                                    <td>{sk.tglsk}</td>
+                                                    <td>{sk.filesk}</td>
+                                                    <td className="text-center">
+                                                        {hasAnyPermission([
+                                                            "sks.edit",
+                                                        ]) && (
+                                                            <Link
+                                                                href={`/admin/sks/${sk.id}/edit`}
+                                                                className="btn btn-primary btn-sm me-2"
+                                                            >
+                                                                <i className="fa fa-pencil-alt"></i>
+                                                            </Link>
+                                                        )}
+                                                        {hasAnyPermission([
+                                                            "sks.delete",
+                                                        ]) && (
+                                                            <Delete
+                                                                URL={
+                                                                    "/admin/sks"
+                                                                }
+                                                                id={sk.id}
+                                                            />
+                                                        )}
+                                                    </td>
+                                                </tr>
+                                            ))}
+
                                         </tbody>
                                     </table>
                                 </div>
