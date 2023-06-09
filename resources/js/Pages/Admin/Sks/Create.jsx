@@ -18,19 +18,29 @@ export default function SksCreate() {
     const { errors } = usePage().props;
 
     //state
+    const [desa, setDesa] = useState("");
+    const [jabatan, setJabatan] = useState("");
+    const [tahun, setTahun] = useState("");
     const [name, setName] = useState("");
-    const [tranfer, setTranfer] = useState("");
+    const [tglsk, setTglsk] = useState("");
+    const [filesk, setFilesk] = useState("");
+    
+    
 
-    const storeBank = async (e) => {
+    const storeSk = async (e) => {
         e.preventDefault();
 
         //sending data
         Inertia.post(
-            "/admin/banks",
+            "/admin/sks",
             {
                 //data
+                desa: desa,
+                jabatan: jabatan,
+                tahun: tahun,
                 name: name,
-                tranfer: tranfer,
+                tglsk: tglsk,
+                filesk: filesk,
             },
             {
                 onSuccess: () => {
@@ -72,9 +82,36 @@ export default function SksCreate() {
                             </div>
                             <div className="card-body">
                                 <form onSubmit={storeSk}>
-                                <div className="mb-3">
-                                        <label className="form-label fw-bold">Bank Name</label>
-                                        <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter Bank Name" />
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">Desa</label>
+                                        <input type="text" className="form-control" value={desa} onChange={(e) => setDesa(e.target.value)} placeholder="Masukkan nama Desa" />
+                                    </div>
+                                    {errors.desa && (
+                                        <div className="alert alert-danger">
+                                            {errors.desa}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">Jabatan</label>
+                                        <input type="text" className="form-control" value={jabatan} onChange={(e) => setJabatan(e.target.value)} placeholder="Masukkan Jabatan" />
+                                    </div>
+                                    {errors.jabatan && (
+                                        <div className="alert alert-danger">
+                                            {errors.jabatan}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">Tahun</label>
+                                        <input type="text" className="form-control" value={tahun} onChange={(e) => setTahun(e.target.value)} placeholder="Masukkan Tahun" />
+                                    </div>
+                                    {errors.tahun && (
+                                        <div className="alert alert-danger">
+                                            {errors.tahun}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">Nama</label>
+                                        <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Masukkan Nama" />
                                     </div>
                                     {errors.name && (
                                         <div className="alert alert-danger">
@@ -82,14 +119,24 @@ export default function SksCreate() {
                                         </div>
                                     )}
                                     <div className="mb-3">
-                                        <label className="form-label fw-bold">Biaya Tranfer</label>
-                                        <input type="number" className="form-control" value={tranfer} onChange={(e) => setTranfer(e.target.value)} placeholder="Enter Nominal Tranfer" />
+                                        <label className="form-label fw-bold">Tanggal SK</label>
+                                        <input type="text" className="form-control" value={desa} onChange={(e) => setTglsk(e.target.value)} placeholder="Masukkan Tanggal SK" />
                                     </div>
-                                    {errors.tranfer && (
+                                    {errors.tglsk && (
                                         <div className="alert alert-danger">
-                                            {errors.tranfer}
+                                            {errors.tglsk}
                                         </div>
                                     )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">File SK</label>
+                                        <input type="text" className="form-control" value={filesk} onChange={(e) => setFilesk(e.target.value)} placeholder="Masukkan File SK" />
+                                    </div>
+                                    {errors.filesk && (
+                                        <div className="alert alert-danger">
+                                            {errors.filesk}
+                                        </div>
+                                    )}
+                                    
 
                                     <div>
                                         <button
