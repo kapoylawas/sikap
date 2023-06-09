@@ -90,5 +90,9 @@ Route::prefix('admin')->group(function () {
        Route::resource('/puskesmas', \App\Http\Controllers\Admin\PuskesmasController::class, ['as' => 'admin'])
        ->middleware('permission:puskesmas.index|puskesmas.create|puskesmas.edit|puskesmas.delete');
 
+       // route resource puskesmas
+       Route::resource('/sks', \App\Http\Controllers\Admin\SksController::class, ['as' => 'admin'])
+       ->middleware('permission:sks.index|sks.create|sks.edit|sks.delete');
+
     });
 });
