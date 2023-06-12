@@ -18,7 +18,16 @@ export default function CityCreate() {
 
     const [cityID, setCityID] = useState("");
     const [subdistrictsID, setSubdistrictsID] = useState("");
-    const [villagesID, setvillagesID] = useState("");
+    const [villagesID, setVillagesID] = useState("");
+    const [banksID, setBanksID] = useState("");
+    const [name, setName] = useState("");
+    const [nik, setNik] = useState("");
+    const [alamat, setAlamat] = useState("");
+    const [tanggalLahir, setTanggalLahir] = useState("");
+    const [norek, setNorek] = useState("");
+    const [nohp, setNohp] = useState("");
+    const [filektp, setFilektp] = useState("");
+    const [filebukutabungan, setFilebukutabungan] = useState("");
 
     return (
         <>
@@ -82,7 +91,9 @@ export default function CityCreate() {
                                             className="form-select"
                                             value={subdistrictsID}
                                             onChange={(e) =>
-                                                setSubdistrictsID(e.target.value)
+                                                setSubdistrictsID(
+                                                    e.target.value
+                                                )
                                             }
                                         >
                                             <option value="">
@@ -111,7 +122,7 @@ export default function CityCreate() {
                                             className="form-select"
                                             value={villagesID}
                                             onChange={(e) =>
-                                                setvillagesID(e.target.value)
+                                                setVillagesID(e.target.value)
                                             }
                                         >
                                             <option value="">
@@ -132,7 +143,184 @@ export default function CityCreate() {
                                             {errors.village_id}
                                         </div>
                                     )}
-
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Bank
+                                        </label>
+                                        <select
+                                            className="form-select"
+                                            value={banksID}
+                                            onChange={(e) =>
+                                                setBanksID(e.target.value)
+                                            }
+                                        >
+                                            <option value="">
+                                                -- Select Bank --
+                                            </option>
+                                            {banks.map((bank) => (
+                                                <option
+                                                    value={bank.id}
+                                                    key={bank.id}
+                                                >
+                                                    {bank.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    {errors.bank_id && (
+                                        <div className="alert alert-danger">
+                                            {errors.bank_id}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Name
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            value={name}
+                                            onChange={(e) =>
+                                                setName(e.target.value)
+                                            }
+                                            placeholder="Enter Name"
+                                        />
+                                    </div>
+                                    {errors.name && (
+                                        <div className="alert alert-danger">
+                                            {errors.name}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Nik
+                                        </label>
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            value={nik}
+                                            onChange={(e) =>
+                                                setNik(e.target.value)
+                                            }
+                                            placeholder="Enter NIK"
+                                        />
+                                    </div>
+                                    {errors.nik && (
+                                        <div className="alert alert-danger">
+                                            {errors.nik}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Alamat
+                                        </label>
+                                        <textarea
+                                            type="text"
+                                            className="form-control"
+                                            value={alamat}
+                                            onChange={(e) =>
+                                                setAlamat(e.target.value)
+                                            }
+                                            placeholder="Enter Alamat"
+                                        />
+                                    </div>
+                                    {errors.alamat && (
+                                        <div className="alert alert-danger">
+                                            {errors.alamat}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Tanggal Lahir
+                                        </label>
+                                        <input
+                                            type="date"
+                                            className="form-control"
+                                            value={tanggalLahir}
+                                            onChange={(e) =>
+                                                setTanggalLahir(e.target.value)
+                                            }
+                                        />
+                                    </div>
+                                    {errors.tglLahir && (
+                                        <div className="alert alert-danger">
+                                            {errors.tglLahir}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            No Rekening
+                                        </label>
+                                        <input
+                                            type="input"
+                                            className="form-control"
+                                            value={norek}
+                                            onChange={(e) =>
+                                                setNorek(e.target.value)
+                                            }
+                                            placeholder="No Rekening"
+                                        />
+                                    </div>
+                                    {errors.norek && (
+                                        <div className="alert alert-danger">
+                                            {errors.norek}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            No Hanphone/WA
+                                        </label>
+                                        <input
+                                            type="input"
+                                            className="form-control"
+                                            value={nohp}
+                                            onChange={(e) =>
+                                                setNohp(e.target.value)
+                                            }
+                                            placeholder="No Hanphone/WA"
+                                        />
+                                    </div>
+                                    {errors.nohp && (
+                                        <div className="alert alert-danger">
+                                            {errors.nohp}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            File KTP <li style={{ color: "red" }}>(File Wajib PDF, max 4 mb)</li>
+                                        </label>
+                                        <input
+                                            type="file"
+                                            className="form-control"
+                                            value={filektp}
+                                            onChange={(e) =>
+                                                setFilektp(e.target.files[0])
+                                            }
+                                        />
+                                    </div>
+                                    {errors.filektp && (
+                                        <div className="alert alert-danger">
+                                            {errors.filektp}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            File Buku Tabungan <li style={{ color: "red" }}>(File Wajib PDF, max 4 mb)</li>
+                                        </label>
+                                        <input
+                                            type="file"
+                                            className="form-control"
+                                            value={filebukutabungan}
+                                            onChange={(e) =>
+                                                setFilebukutabungan(e.target.files[0])
+                                            }
+                                        />
+                                    </div>
+                                    {errors.filebukutabungan && (
+                                        <div className="alert alert-danger">
+                                            {errors.filebukutabungan}
+                                        </div>
+                                    )}
                                     <div>
                                         <button
                                             type="submit"
