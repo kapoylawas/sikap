@@ -18,13 +18,13 @@ import Delete from "../../../Shared/Delete";
 //import component pagination
 import Pagination from "../../../Shared/Pagination";
 
-export default function BiodatasIndex() {
-    const { biodatas } = usePage().props;
+export default function PuskesmasIndex() {
+    const { puskesmas } = usePage().props;
 
     return (
         <>
             <Head>
-                <title>Bidoata - SIKAP</title>
+                <title>Puskesmas - SIKAP</title>
             </Head>
             <LayoutAccount>
                 <div className="row mt-5">
@@ -32,7 +32,7 @@ export default function BiodatasIndex() {
                         <div className="row">
                             <div className="col-md-3 col-12 mb-2">
                                 <Link
-                                    href="/admin/biodatas/create"
+                                    href="/admin/puskesmas/create"
                                     className="btn btn-md btn-primary border-0 shadow w-100"
                                     type="button"
                                 >
@@ -41,17 +41,17 @@ export default function BiodatasIndex() {
                                 </Link>
                             </div>
                             <div className="col-md-9 col-12 mb-2">
-                                <Search URL={"/admin/biodata"} />
+                                <Search URL={"/admin/puskesmas"} />
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="row mt-2 mb-4">
-                <div className="col-12">
+                    <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> City
+                                    <i className="fa fa-hospital"></i> Master Puskesmas
                                 </span>
                             </div>
                             <div className="card-body">
@@ -69,37 +69,7 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Kota
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Kecamatan
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Kelurahan/desa
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Bank
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
                                                     Name
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Nik
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -111,19 +81,13 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    No. Rekening
+                                                    Email
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    No. HP
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Foto KTP
+                                                    Phone
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -134,43 +98,37 @@ export default function BiodatasIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {biodatas.data.map((biodata, index) => (
+                                            {puskesmas.data.map((pusk, index) => (
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
-                                                            (biodatas.current_page -
+                                                            (puskesmas.current_page -
                                                                 1) *
-                                                                biodatas.per_page}
+                                                                puskesmas.per_page}
                                                     </td>
-                                                    <td>{biodata.city_id}</td>
-                                                    <td>{biodata.subdistrict_id}</td>
-                                                    <td>{biodata.village_id}</td>
-                                                    <td>{biodata.bank_id}</td>
-                                                    <td>{biodata.name}</td>
-                                                    <td>{biodata.nik}</td>
-                                                    <td>{biodata.alamat}</td>
-                                                    <td>{biodata.norek}</td>
-                                                    <td>{biodata.nohp}</td>
-                                                    <td>{biodata.filektp}</td>
+                                                    <td>{pusk.name}</td>
+                                                    <td>{pusk.alamat}</td>
+                                                    <td>{pusk.email}</td>
+                                                    <td>{pusk.phone}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
-                                                            "biodatas.edit",
+                                                            "puskesmas.edit",
                                                         ]) && (
                                                             <Link
-                                                                href={`/admin/biodatas/${biodata.id}/edit`}
+                                                                href={`/admin/puskesmas/${pusk.id}/edit`}
                                                                 className="btn btn-primary btn-sm me-2"
                                                             >
                                                                 <i className="fa fa-pencil-alt"></i>
                                                             </Link>
                                                         )}
                                                         {hasAnyPermission([
-                                                            "biodatas.delete",
+                                                            "puskesmas.delete",
                                                         ]) && (
                                                             <Delete
                                                                 URL={
-                                                                    "/admin/biodatas"
+                                                                    "/admin/puskesmas"
                                                                 }
-                                                                id={biodata.id}
+                                                                id={pusk.id}
                                                             />
                                                         )}
                                                     </td>
@@ -181,7 +139,7 @@ export default function BiodatasIndex() {
                                 </div>
                                 <br />
                                 <Pagination
-                                    links={biodatas.links}
+                                    links={puskesmas.links}
                                     align={"end"}
                                 />
                             </div>

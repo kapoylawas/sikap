@@ -482,6 +482,74 @@ export default function Sidebar() {
                                         </span>
                                     </Link>
                                 </li>
+                            </>
+                        )}
+                        {hasAnyPermission(["sks.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/sks")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/sks"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    class="bi bi-file-earmark-medical-fill me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-3 2v.634l.549-.317a.5.5 0 1 1 .5.866L7 7l.549.317a.5.5 0 1 1-.5.866L6.5 7.866V8.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L5 7l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V5.5a.5.5 0 1 1 1 0zm-2 4.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zm0 2h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"/>
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                SK
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+                        {hasAnyPermission(["puskesmas.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/puskesmas")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/puskesmas"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    class="bi bi-hospital me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="M6 0a1 1 0 0 0-1 1v1a1 1 0 0 0-1 1v4H1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h6v-2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V16h6a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3V3a1 1 0 0 0-1-1V1a1 1 0 0 0-1-1H6Zm2.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM2.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 9.75v-.5A.25.25 0 0 1 2.25 9Zm0 2h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5ZM13.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25Z"/>
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                Puskesmas
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
                                 <li
                                     role="separator"
                                     className="dropdown-divider mt-2 mb-2 border-gray-700"

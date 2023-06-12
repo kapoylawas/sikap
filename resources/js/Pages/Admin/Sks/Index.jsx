@@ -18,13 +18,13 @@ import Delete from "../../../Shared/Delete";
 //import component pagination
 import Pagination from "../../../Shared/Pagination";
 
-export default function BiodatasIndex() {
-    const { biodatas } = usePage().props;
+export default function SksIndex() {
+    const { sks } = usePage().props;
 
     return (
         <>
             <Head>
-                <title>Bidoata - SIKAP</title>
+                <title>SK - SIKAP</title>
             </Head>
             <LayoutAccount>
                 <div className="row mt-5">
@@ -32,7 +32,7 @@ export default function BiodatasIndex() {
                         <div className="row">
                             <div className="col-md-3 col-12 mb-2">
                                 <Link
-                                    href="/admin/biodatas/create"
+                                    href="/admin/sks/create"
                                     className="btn btn-md btn-primary border-0 shadow w-100"
                                     type="button"
                                 >
@@ -41,7 +41,7 @@ export default function BiodatasIndex() {
                                 </Link>
                             </div>
                             <div className="col-md-9 col-12 mb-2">
-                                <Search URL={"/admin/biodata"} />
+                                <Search URL={"/admin/sks"} />
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export default function BiodatasIndex() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> City
+                                    <i className="fa fa-paper"></i> Data SK
                                 </span>
                             </div>
                             <div className="card-body">
@@ -69,61 +69,37 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Kota
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
                                                     Kecamatan
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Kelurahan/desa
+                                                    Jabatan
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Bank
+                                                    Tahun
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Name
+                                                    Nama
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Nik
+                                                    Tgl SK
                                                 </th>
                                                 <th
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Alamat
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    No. Rekening
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    No. HP
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Foto KTP
+                                                    File SK
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -134,54 +110,51 @@ export default function BiodatasIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {biodatas.data.map((biodata, index) => (
+                                        {sks.data.map((sk, index) => (
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
-                                                            (biodatas.current_page -
+                                                            (sks.current_page -
                                                                 1) *
-                                                                biodatas.per_page}
+                                                                sks.per_page}
                                                     </td>
-                                                    <td>{biodata.city_id}</td>
-                                                    <td>{biodata.subdistrict_id}</td>
-                                                    <td>{biodata.village_id}</td>
-                                                    <td>{biodata.bank_id}</td>
-                                                    <td>{biodata.name}</td>
-                                                    <td>{biodata.nik}</td>
-                                                    <td>{biodata.alamat}</td>
-                                                    <td>{biodata.norek}</td>
-                                                    <td>{biodata.nohp}</td>
-                                                    <td>{biodata.filektp}</td>
+                                                    <td>{sk.village}</td>
+                                                    <td>{sk.jabatan}</td>
+                                                    <td>{sk.tahun}</td>
+                                                    <td>{sk.name}</td>
+                                                    <td>{sk.tglsk}</td>
+                                                    <td>{sk.filesk}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
-                                                            "biodatas.edit",
+                                                            "sks.edit",
                                                         ]) && (
                                                             <Link
-                                                                href={`/admin/biodatas/${biodata.id}/edit`}
+                                                                href={`/admin/sks/${sk.id}/edit`}
                                                                 className="btn btn-primary btn-sm me-2"
                                                             >
                                                                 <i className="fa fa-pencil-alt"></i>
                                                             </Link>
                                                         )}
                                                         {hasAnyPermission([
-                                                            "biodatas.delete",
+                                                            "sks.delete",
                                                         ]) && (
                                                             <Delete
                                                                 URL={
-                                                                    "/admin/biodatas"
+                                                                    "/admin/sks"
                                                                 }
-                                                                id={biodata.id}
+                                                                id={sk.id}
                                                             />
                                                         )}
                                                     </td>
                                                 </tr>
                                             ))}
+
                                         </tbody>
                                     </table>
                                 </div>
                                 <br />
                                 <Pagination
-                                    links={biodatas.links}
+                                    links={sks.links}
                                     align={"end"}
                                 />
                             </div>
