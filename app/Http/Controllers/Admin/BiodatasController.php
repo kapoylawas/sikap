@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Bank;
 use App\Models\Biodata;
 use App\Models\City;
 use App\Models\Subdistrict;
@@ -30,12 +31,14 @@ class BiodatasController extends Controller
         $cities = City::all();
         $subdistricts = Subdistrict::all();
         $villages = Village::all();
+        $banks = Bank::all();
         
         //return inertia
         return inertia('Admin/Biodata/Create', [
             'cities' => $cities,
             'subdistricts' => $subdistricts,
             'villages' => $villages,
+            'banks' => $banks,
         ]);
     }
 }

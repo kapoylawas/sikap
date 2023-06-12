@@ -14,7 +14,7 @@ import { Inertia } from "@inertiajs/inertia";
 import Swal from "sweetalert2";
 
 export default function CityCreate() {
-    const { errors, cities, subdistricts, villages } = usePage().props;
+    const { errors, cities, subdistricts, villages, banks } = usePage().props;
 
     const [cityID, setCityID] = useState("");
     const [subdistrictsID, setSubdistrictsID] = useState("");
