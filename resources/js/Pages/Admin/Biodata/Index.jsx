@@ -20,7 +20,7 @@ import Pagination from "../../../Shared/Pagination";
 
 export default function BiodatasIndex() {
     const { biodatas } = usePage().props;
-
+    console.log(biodatas);
     return (
         <>
             <Head>
@@ -51,7 +51,7 @@ export default function BiodatasIndex() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> City
+                                    <i className="fa fa-home"></i> Biodata
                                 </span>
                             </div>
                             <div className="card-body">
@@ -129,6 +129,18 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
+                                                    Foto Buku Tabungan
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
+                                                    Foto
+                                                </th>
+                                                <th
+                                                    scope="col"
+                                                    style={{ width: "15%" }}
+                                                >
                                                     Actions
                                                 </th>
                                             </tr>
@@ -142,16 +154,51 @@ export default function BiodatasIndex() {
                                                                 1) *
                                                                 biodatas.per_page}
                                                     </td>
-                                                    <td>{biodata.city_id}</td>
-                                                    <td>{biodata.subdistrict_id}</td>
-                                                    <td>{biodata.village_id}</td>
-                                                    <td>{biodata.bank_id}</td>
+                                                    <td>{biodata.city.name}</td>
+                                                    <td>{biodata.subdistrict.name}</td>
+                                                    <td>{biodata.village.name}</td>
+                                                    <td>{biodata.bank.name}</td>
                                                     <td>{biodata.name}</td>
                                                     <td>{biodata.nik}</td>
                                                     <td>{biodata.alamat}</td>
                                                     <td>{biodata.norek}</td>
                                                     <td>{biodata.nohp}</td>
-                                                    <td>{biodata.filektp}</td>
+                                                    <td>
+                                                        <a
+                                                                className="btn btn-success"
+                                                                target="_blank"
+                                                                href={biodata.ktp}
+                                                            >
+                                                                <i className="fa fa-pdf">
+                                                                    {" "}
+                                                                    Lihat
+                                                                </i>{" "}
+                                                            </a>
+                                                    </td>
+                                                    <td>
+                                                        <a
+                                                                className="btn btn-success"
+                                                                target="_blank"
+                                                                href={biodata.filebukutabungan}
+                                                            >
+                                                                <i className="fa fa-pdf">
+                                                                    {" "}
+                                                                    Lihat
+                                                                </i>{" "}
+                                                            </a>
+                                                    </td>
+                                                    <td>
+                                                        <a
+                                                                className="btn btn-success"
+                                                                target="_blank"
+                                                                href={biodata.foto}
+                                                            >
+                                                                <i className="fa fa-pdf">
+                                                                    {" "}
+                                                                    Lihat
+                                                                </i>{" "}
+                                                            </a>
+                                                    </td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
                                                             "biodatas.edit",

@@ -22,9 +22,9 @@ class Biodata extends Model
         'tglLahir',
         'norek',
         'nohp',
-        'ktp_image',
-        'bukutabungan_image',
-        'foto_image',
+        'ktp',
+        'filebukutabungan',
+        'foto',
     ];
 
     public function city()
@@ -47,24 +47,24 @@ class Biodata extends Model
         return $this->belongsTo(Bank::class);
     }
 
-    protected function ktpImage(): Attribute
+    protected function ktp(): Attribute
     {
         return Attribute::make(
-            get: fn ($ktpImage) => asset('/storage/ktp/' . $ktpImage),
+            get: fn ($ktp) => asset('/storage/ktp/' . $ktp),
         );
     }
 
-    protected function bukutabunganImage(): Attribute
+    protected function filebukutabungan(): Attribute
     {
         return Attribute::make(
-            get: fn ($bukutabunganImage) => asset('/storage/bukutabungan/' . $bukutabunganImage),
+            get: fn ($filebukutabungan) => asset('/storage/bukutabungan/' . $filebukutabungan),
         );
     }
 
-    protected function fotoImage(): Attribute
+    protected function foto(): Attribute
     {
         return Attribute::make(
-            get: fn ($fotoImage) => asset('/storage/foto/' . $fotoImage),
+            get: fn ($foto) => asset('/storage/foto/' . $foto),
         );
     }
 }

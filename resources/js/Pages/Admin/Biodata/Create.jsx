@@ -26,8 +26,47 @@ export default function CityCreate() {
     const [tanggalLahir, setTanggalLahir] = useState("");
     const [norek, setNorek] = useState("");
     const [nohp, setNohp] = useState("");
-    const [filektp, setFilektp] = useState("");
-    const [filebukutabungan, setFilebukutabungan] = useState("");
+    const [filektp, setFilektp] = useState(null);
+    const [filebukutabungan, setFilebukutabungan] = useState(null);
+    const [foto, setFoto] = useState(null);
+
+    //method "storeCategory"
+    const storeBiodatas = async (e) => {
+        e.preventDefault();
+
+        //sending data
+        Inertia.post(
+            "/admin/biodatas",
+            {
+                //data
+                city_id: cityID,
+                subdistrict_id: subdistrictsID,
+                village_id: villagesID,
+                bank_id: banksID,
+                name: name,
+                nik: nik,
+                alamat: alamat,
+                tglLahir: tanggalLahir,
+                norek: norek,
+                nohp: nohp,
+                ktp: filektp,
+                filebukutabungan: filebukutabungan,
+                foto: foto,
+            },
+            {
+                onSuccess: () => {
+                    //show alert
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Data saved successfully!",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                },
+            }
+        );
+    };
 
     return (
         <>
@@ -53,7 +92,7 @@ export default function CityCreate() {
                                 </span>
                             </div>
                             <div className="card-body">
-                                <form>
+                                <form onSubmit={storeBiodatas}>
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
                                             Kota
@@ -292,15 +331,14 @@ export default function CityCreate() {
                                         <input
                                             type="file"
                                             className="form-control"
-                                            value={filektp}
                                             onChange={(e) =>
                                                 setFilektp(e.target.files[0])
                                             }
                                         />
                                     </div>
-                                    {errors.filektp && (
+                                    {errors.ktp && (
                                         <div className="alert alert-danger">
-                                            {errors.filektp}
+                                            {errors.ktp}
                                         </div>
                                     )}
                                     <div className="mb-3">
@@ -310,7 +348,6 @@ export default function CityCreate() {
                                         <input
                                             type="file"
                                             className="form-control"
-                                            value={filebukutabungan}
                                             onChange={(e) =>
                                                 setFilebukutabungan(e.target.files[0])
                                             }
@@ -319,6 +356,23 @@ export default function CityCreate() {
                                     {errors.filebukutabungan && (
                                         <div className="alert alert-danger">
                                             {errors.filebukutabungan}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            File Foto <li style={{ color: "red" }}>(File Wajib JPG,JPEG,PNG max 4 mb)</li>
+                                        </label>
+                                        <input
+                                            type="file"
+                                            className="form-control"
+                                            onChange={(e) =>
+                                                setFoto(e.target.files[0])
+                                            }
+                                        />
+                                    </div>
+                                    {errors.foto && (
+                                        <div className="alert alert-danger">
+                                            {errors.foto}
                                         </div>
                                     )}
                                     <div>
