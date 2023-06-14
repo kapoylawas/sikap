@@ -114,4 +114,24 @@ class BiodatasController extends Controller
         //redirect
         return redirect()->route('admin.biodatas.index');
     }
+
+    public function edit($id)
+    {
+        //get biodatas
+        $biodatas = Biodata::findOrFail($id);
+
+        $cities = City::all();
+        $subdistricts = Subdistrict::all();
+        $villages = Village::all();
+        $banks = Bank::all();
+
+        //render with inertia
+        return inertia('Admin/Biodata/Edit', [
+            'biodatas'          => $biodatas,
+            'cities' => $cities,
+            'subdistricts' => $subdistricts,
+            'villages' => $villages,
+            'banks' => $banks,
+        ]);
+    }
 }

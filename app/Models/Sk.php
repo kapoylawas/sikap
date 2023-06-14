@@ -40,6 +40,11 @@ class Sk extends Model
         return $this->belongsTo(Jabatan::class);
     }
 
+    public function biodata()
+    {
+        return $this->hasMany(Biodata::class, 'nik', 'nik');
+    }
+
     protected function filesk(): Attribute
     {
         return Attribute::make(

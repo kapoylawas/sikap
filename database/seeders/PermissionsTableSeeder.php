@@ -13,6 +13,12 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        //permission sk
+        Permission::create(['name' => 'sks.index', 'guard_name' => 'web']);
+        Permission::create(['name' => 'sks.create', 'guard_name' => 'web']);
+        Permission::create(['name' => 'sks.edit', 'guard_name' => 'web']);
+        Permission::create(['name' => 'sks.delete', 'guard_name' => 'web']);
+        
         //permission dashboard
         Permission::create(['name' => 'dashboard.index', 'guard_name' => 'web']);
         Permission::create(['name' => 'dashboard.statistics', 'guard_name' => 'web']);
@@ -32,6 +38,14 @@ class PermissionsTableSeeder extends Seeder
  
          //permission permissions
          Permission::create(['name' => 'permissions.index', 'guard_name' => 'web']);
+
+         //permission city
+        Permission::create(['name' => 'citys.index', 'guard_name' => 'web']);
+        Permission::create(['name' => 'citys.create', 'guard_name' => 'web']);
+        Permission::create(['name' => 'citys.edit', 'guard_name' => 'web']);
+        Permission::create(['name' => 'citys.delete', 'guard_name' => 'web']);
+        
+         
 
          //permission city
         Permission::create(['name' => 'citys.index', 'guard_name' => 'web']);
