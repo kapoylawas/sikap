@@ -44,14 +44,6 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'citys.create', 'guard_name' => 'web']);
         Permission::create(['name' => 'citys.edit', 'guard_name' => 'web']);
         Permission::create(['name' => 'citys.delete', 'guard_name' => 'web']);
-        
-         
-
-         //permission city
-        Permission::create(['name' => 'citys.index', 'guard_name' => 'web']);
-        Permission::create(['name' => 'citys.create', 'guard_name' => 'web']);
-        Permission::create(['name' => 'citys.edit', 'guard_name' => 'web']);
-        Permission::create(['name' => 'citys.delete', 'guard_name' => 'web']);
 
         //permission subdistricts
         Permission::create(['name' => 'subdistricts.index', 'guard_name' => 'web']);
@@ -94,11 +86,5 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'biodatas.create', 'guard_name' => 'web']);
         Permission::create(['name' => 'biodatas.edit', 'guard_name' => 'web']);
         Permission::create(['name' => 'biodatas.delete', 'guard_name' => 'web']);
-
-        //permission sks
-        Permission::create(['name' => 'sks.index', 'guard_name' => 'web']);
-        Permission::create(['name' => 'sks.create', 'guard_name' => 'web']);
-        Permission::create(['name' => 'sks.edit', 'guard_name' => 'web']);
-        Permission::create(['name' => 'sks.delete', 'guard_name' => 'web']);
     }
 }
