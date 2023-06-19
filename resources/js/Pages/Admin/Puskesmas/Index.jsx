@@ -69,7 +69,7 @@ export default function PuskesmasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Name
+                                                    Nama
                                                 </th>
                                                 <th
                                                     scope="col"
@@ -87,7 +87,7 @@ export default function PuskesmasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Phone
+                                                    No. Telpon PIC
                                                 </th>
                                                 <th
                                                     scope="col"
