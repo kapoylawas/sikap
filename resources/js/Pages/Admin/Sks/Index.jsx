@@ -88,7 +88,7 @@ export default function SksIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Nama
+                                                    Nama SK
                                                 </th>
                                                 <th
                                                     scope="col"
