@@ -60,14 +60,14 @@ class BiodatasController extends Controller
             'tglLahir'          => 'required',
             'norek'          => 'required',
             'nohp'          => 'required',
-            'ktp'         => 'required|mimes:pdf|max:4000',
+            'filektp'         => 'required|mimes:pdf|max:4000',
             'filebukutabungan'         => 'required|mimes:pdf|max:4000',
             'foto'         => 'required|image|mimes:jpeg,jpg,png|max:4000',
         ]);
 
         // //upload ktp
-        $ktp = $request->file('ktp');
-        $ktp->storeAs('public/ktp', $ktp->hashName());
+        $filektp = $request->file('filektp');
+        $filektp->storeAs('public/ktp', $filektp->hashName());
 
         // //upload buku tabungan
         $filebukutabungan = $request->file('filebukutabungan');
@@ -89,7 +89,7 @@ class BiodatasController extends Controller
             'tglLahir'          => $request->tglLahir,
             'norek'          => $request->norek,
             'nohp'          => $request->nohp,
-            'ktp'         => $ktp->hashName(),
+            'filektp'         => $filektp->hashName(),
             'filebukutabungan'         => $filebukutabungan->hashName(),
             'foto'         => $foto->hashName(),
         ]);

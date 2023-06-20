@@ -167,7 +167,7 @@ export default function BiodatasIndex() {
                                                         <a
                                                                 className="btn btn-success"
                                                                 target="_blank"
-                                                                href={biodata.ktp}
+                                                                href={biodata.filektp}
                                                             >
                                                                 <i className="fa fa-pdf">
                                                                     {" "}

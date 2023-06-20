@@ -22,7 +22,7 @@ class Biodata extends Model
         'tglLahir',
         'norek',
         'nohp',
-        'ktp',
+        'filektp',
         'filebukutabungan',
         'foto',
     ];
@@ -47,10 +47,10 @@ class Biodata extends Model
         return $this->belongsTo(Bank::class);
     }
 
-    protected function ktp(): Attribute
+    protected function filektp(): Attribute
     {
         return Attribute::make(
-            get: fn ($ktp) => asset('/storage/ktp/' . $ktp),
+            get: fn ($filektp) => asset('/storage/ktp/' . $filektp),
         );
     }
 

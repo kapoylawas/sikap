@@ -49,7 +49,7 @@ export default function CityCreate() {
                 tglLahir: tanggalLahir,
                 norek: norek,
                 nohp: nohp,
-                ktp: filektp,
+                filektp: filektp,
                 filebukutabungan: filebukutabungan,
                 foto: foto,
             },
@@ -336,9 +336,9 @@ export default function CityCreate() {
                                             }
                                         />
                                     </div>
-                                    {errors.ktp && (
+                                    {errors.filektp && (
                                         <div className="alert alert-danger">
-                                            {errors.ktp}
+                                            {errors.filektp}
                                         </div>
                                     )}
                                     <div className="mb-3">
