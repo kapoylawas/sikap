@@ -443,12 +443,48 @@ export default function Sidebar() {
                                         </span>
                                     </Link>
                                 </li>
+                            </>
+                        )}
+
+                        {hasAnyPermission(["puskesmas.index"]) && (
+                            <>
+                                <li
+                                    className={`${
+                                        url.startsWith("/admin/puskesmas")
+                                            ? "nav-item active"
+                                            : "nav-item"
+                                    }`}
+                                >
+                                    <Link
+                                        href="/admin/puskesmas"
+                                        className="nav-link d-flex justify-content-between"
+                                    >
+                                        <span>
+                                            <span className="sidebar-icon">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    fill="currentColor"
+                                                    class="bi bi-hospital me-2"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <path d="M6 0a1 1 0 0 0-1 1v1a1 1 0 0 0-1 1v4H1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h6v-2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V16h6a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3V3a1 1 0 0 0-1-1V1a1 1 0 0 0-1-1H6Zm2.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM2.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 9.75v-.5A.25.25 0 0 1 2.25 9Zm0 2h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5ZM13.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25Z"/>
+                                                </svg>
+                                            </span>
+                                            <span className="sidebar-text">
+                                                Puskesmas
+                                            </span>
+                                        </span>
+                                    </Link>
+                                </li>
                                 <li
                                     role="separator"
                                     className="dropdown-divider mt-2 mb-2 border-gray-700"
                                 ></li>
                             </>
                         )}
+
                         {hasAnyPermission(["sks.index"]) && (
                             <>
                                 <li
@@ -516,20 +552,23 @@ export default function Sidebar() {
                                         </span>
                                     </Link>
                                 </li>
+                                <li
+                                    role="separator"
+                                    className="dropdown-divider mt-2 mb-2 border-gray-700"
+                                ></li>
                             </>
                         )}
-                        
-                        {hasAnyPermission(["puskesmas.index"]) && (
+                        {hasAnyPermission(["laporans.index"]) && (
                             <>
                                 <li
                                     className={`${
-                                        url.startsWith("/admin/puskesmas")
+                                        url.startsWith("/admin/laporans")
                                             ? "nav-item active"
                                             : "nav-item"
                                     }`}
                                 >
                                     <Link
-                                        href="/admin/puskesmas"
+                                        href="/admin/laporans"
                                         className="nav-link d-flex justify-content-between"
                                     >
                                         <span>
@@ -539,14 +578,14 @@ export default function Sidebar() {
                                                     width="20"
                                                     height="20"
                                                     fill="currentColor"
-                                                    class="bi bi-hospital me-2"
+                                                    class="bi bi-files me-2"
                                                     viewBox="0 0 16 16"
                                                 >
-                                                    <path d="M6 0a1 1 0 0 0-1 1v1a1 1 0 0 0-1 1v4H1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h6v-2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V16h6a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3V3a1 1 0 0 0-1-1V1a1 1 0 0 0-1-1H6Zm2.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM2.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 9.75v-.5A.25.25 0 0 1 2.25 9Zm0 2h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5ZM13.25 9h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5a.25.25 0 0 1 .25-.25Z"/>
+                                                    <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
                                                 </svg>
                                             </span>
                                             <span className="sidebar-text">
-                                                Puskesmas
+                                                Laporan
                                             </span>
                                         </span>
                                     </Link>
@@ -557,6 +596,7 @@ export default function Sidebar() {
                                 ></li>
                             </>
                         )}
+
                     </ul>
                 </div>
             </nav>
