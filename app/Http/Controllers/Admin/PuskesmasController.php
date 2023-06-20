@@ -63,7 +63,7 @@ class PuskesmasController extends Controller
         ]);
     }
 
-    public function update(Request $request, Puskesmas $puskesmas)
+    public function update(Request $request, Puskesmas $puskesma)
     {
         /**
          * validate request
@@ -76,7 +76,7 @@ class PuskesmasController extends Controller
         ]);
 
         //update puskesmas
-        $puskesmas->update([
+        $puskesma->update([
             'name'       => $request->name,
             'alamat'     => $request->alamat,
             'email'      => $request->email,
