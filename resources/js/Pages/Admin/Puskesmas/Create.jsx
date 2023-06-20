@@ -74,7 +74,7 @@ export default function PuskesmasCreate() {
                             <div className="card-body">
                                 <form onSubmit={storePuskesmas}>
                                     <div className="mb-3">
-                                        <label className="form-label fw-bold">Name</label>
+                                        <label className="form-label fw-bold">Nama</label>
                                         <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)} placeholder="Masukkan Nama" />
                                     </div>
                                     {errors.name && (
@@ -101,8 +101,8 @@ export default function PuskesmasCreate() {
                                         </div>
                                     )}
                                     <div className="mb-3">
-                                        <label className="form-label fw-bold">Phone</label>
-                                        <input type="text" className="form-control" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Masukkan No. Telpon" />
+                                        <label className="form-label fw-bold">No. Telpon PIC</label>
+                                        <input type="text" className="form-control" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Masukkan No. Telpon PIC" />
                                     </div>
                                     {errors.phone && (
                                         <div className="alert alert-danger">
