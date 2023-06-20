@@ -132,6 +132,17 @@ class SksController extends Controller
         return redirect()->route('admin.sks.index');
     }
 
+    public function show($id)
+    {
+        //get sk by ID
+        $sks = Sk::findOrFail($id);
+
+        //return
+        return inertia('Admin/Sks/Show', [
+            'sks'   => $sks,
+        ]);
+    }
+
     public function destroy($id)
     {
         //find role by ID
