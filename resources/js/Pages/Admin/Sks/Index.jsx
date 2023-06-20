@@ -20,6 +20,7 @@ import Pagination from "../../../Shared/Pagination";
 
 export default function SksIndex() {
     const { sks } = usePage().props;
+    console.log(sks);
 
     return (
         <>
@@ -47,7 +48,7 @@ export default function SksIndex() {
                     </div>
                 </div>
                 <div className="row mt-2 mb-4">
-                <div className="col-12">
+                    <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
@@ -110,7 +111,7 @@ export default function SksIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {sks.data.map((sk, index) => (
+                                            {sks.data.map((sk, index) => (
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
@@ -118,13 +119,30 @@ export default function SksIndex() {
                                                                 1) *
                                                                 sks.per_page}
                                                     </td>
-                                                    <td>{sk.village}</td>
-                                                    <td>{sk.jabatan}</td>
+                                                    <td>{sk.village.name}</td>
+                                                    <td>{sk.jabatan.name}</td>
                                                     <td>{sk.tahun}</td>
                                                     <td>{sk.name}</td>
                                                     <td>{sk.tglsk}</td>
-                                                    <td>{sk.filesk}</td>
+                                                    <td>
+                                                        <a
+                                                            className="btn btn-success"
+                                                            target="_blank"
+                                                            href={sk.filesk}
+                                                        >
+                                                            <i className="fa fa-pdf">
+                                                                {" "}
+                                                                Lihat
+                                                            </i>{" "}
+                                                        </a>
+                                                    </td>
                                                     <td className="text-center">
+                                                        <Link
+                                                            href={`/admin/sks/${sk.id}`}
+                                                            className="btn btn-primary btn-sm me-2"
+                                                        >
+                                                            <i className="fa fa-plus-circle"></i>
+                                                        </Link>
                                                         {hasAnyPermission([
                                                             "sks.edit",
                                                         ]) && (
@@ -148,15 +166,11 @@ export default function SksIndex() {
                                                     </td>
                                                 </tr>
                                             ))}
-
                                         </tbody>
                                     </table>
                                 </div>
                                 <br />
-                                <Pagination
-                                    links={sks.links}
-                                    align={"end"}
-                                />
+                                <Pagination links={sks.links} align={"end"} />
                             </div>
                         </div>
                     </div>

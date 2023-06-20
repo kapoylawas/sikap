@@ -13,52 +13,51 @@ import { Inertia } from "@inertiajs/inertia";
 //import Sweet Alert
 import Swal from "sweetalert2";
 
-export default function SksCreate() {
+export default function SksEdit() {
     //destruct props "errors" & "datas"
-    const { errors, villages, jabatans } = usePage().props;
+    const { errors, villages, jabatans, sks } = usePage().props;
 
     //state
-    const [villageID, setVillageID] = useState("");
-    const [jobID, setJobID] = useState("");
-    const [tahun, setTahun] = useState("");
-    const [name, setName] = useState("");
-    const [tglsk, setTglsk] = useState("");
+    const [villageID, setVillageID] = useState(sks.village_id);
+    const [jobID, setJobID] = useState(sks.jabatan_id);
+    const [tahun, setTahun] = useState(sks.tahun);
+    const [name, setName] = useState(sks.name);
+    const [tglsk, setTglsk] = useState(sks.tglsk);
     const [filesk, setFilesk] = useState(null);
 
-    const storeSk = async (e) => {
+    const updateSK = async (e) => {
         e.preventDefault();
 
         //sending data
-        Inertia.post(
-            "/admin/sks",
-            {
-                //data
-                village_id: villageID,
-                jabatan_id: jobID,
-                tahun: tahun,
-                name: name,
-                tglsk: tglsk,
-                filesk: filesk,
-            },
-            {
-                onSuccess: () => {
-                    //show alert
-                    Swal.fire({
-                        title: "Success!",
-                        text: "Data saved successfully!",
-                        icon: "success",
-                        showConfirmButton: false,
-                        timer: 1500,
-                    });
-                },
-            }
-        );
-    };
+        Inertia.post(`/admin/sks/${sks.id}`, {
 
-    return (
+            //data
+            village_id: villageID,
+            jabatan_id: jobID,
+            tahun: tahun,
+            name: name,
+            tglsk: tglsk,
+            filesk: filesk,
+            _method: "PUT"
+        }, {
+            onSuccess: () => {
+
+                //show alert
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Data updated successfully!',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        });
+    }
+
+    return(
         <>
             <Head>
-                <title>Create SK - SIKAP</title>
+                <title>Edit SK - SIKAP</title>
             </Head>
             <LayoutAccount>
                 <Link
@@ -74,11 +73,11 @@ export default function SksCreate() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-paper"></i> Add New SK
+                                    <i className="fa fa-paper"></i> Edit SK
                                 </span>
                             </div>
                             <div className="card-body">
-                                <form onSubmit={storeSk}>
+                                <form onSubmit={updateSK}>
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
                                             Desa
@@ -233,5 +232,5 @@ export default function SksCreate() {
                 </div>
             </LayoutAccount>
         </>
-    );
+    )
 }
