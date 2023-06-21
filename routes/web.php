@@ -94,5 +94,11 @@ Route::prefix('admin')->group(function () {
        Route::resource('/sks', \App\Http\Controllers\Admin\SksController::class, ['as' => 'admin'])
        ->middleware('permission:sks.index|sks.create|sks.edit|sks.delete');
 
+       //route store transaction sk
+       Route::post('/sks/store_transaction', [\App\Http\Controllers\Admin\SksController::class, 'storeTransactionSk'])->name('admin.sks.store_transaction');
+
+       //route destroy transaction sk for biodata
+       Route::delete('/sks/destroy_transaction/{id}', [\App\Http\Controllers\Admin\SksController::class, 'destroyTransaction'])->name('account.sks.destroy_transaction');
+
     });
 });

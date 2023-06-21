@@ -20,7 +20,6 @@ import Pagination from "../../../Shared/Pagination";
 
 export default function SksIndex() {
     const { sks } = usePage().props;
-    console.log(sks);
 
     return (
         <>

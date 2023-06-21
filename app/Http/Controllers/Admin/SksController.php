@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Biodata;
 use App\Models\Jabatan;
 use App\Models\Sk;
+use App\Models\Sktransaction;
 use App\Models\Village;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -136,11 +138,55 @@ class SksController extends Controller
     {
         //get sk by ID
         $sks = Sk::findOrFail($id);
+        $biodatas = Biodata::all();
+
+        $sks->setRelation('sktransactions', $sks->sktransactions()->with('biodata')->paginate(5));
 
         //return
         return inertia('Admin/Sks/Show', [
             'sks'   => $sks,
+            'biodatas'   => $biodatas,
         ]);
+    }
+
+    public function storeTransactionSk(Request $request)
+    {
+        /**
+         * Validate request
+         */
+        $this->validate(
+            $request,
+            [
+                'biodata_id'   => 'required',
+            ],
+            [
+                'biodata_id.required' => 'biodata harus centang dan pilih satu terlebih dahulu',
+            ]
+        );
+
+        //get sk by ID
+        $sk = Sk::findOrFail($request->sk_id);
+
+        //insert database
+        foreach ($request->biodata_id as $b) {
+            $sk->sktransactions()->create([
+                'biodata_id'     => $b,
+            ]);
+        }
+
+        //return back
+        return redirect()->back();
+    }
+
+    public function destroyTransaction($id)
+    {
+        $transaction = Sktransaction::findOrFail($id);
+
+        //delete image
+        $transaction->delete();
+
+        //redirect
+        return redirect()->back();
     }
 
     public function destroy($id)

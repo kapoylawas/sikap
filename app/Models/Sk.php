@@ -45,10 +45,15 @@ class Sk extends Model
         return $this->hasMany(Biodata::class, 'nik', 'nik');
     }
 
+    public function sktransactions()
+    {
+        return $this->hasMany(Sktransaction::class);
+    }
+
     protected function filesk(): Attribute
     {
         return Attribute::make(
             get: fn ($filesk) => asset('/storage/sk/' . $filesk),
         );
-    }
+    }  
 }
