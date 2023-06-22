@@ -158,7 +158,7 @@ export default function SksCreate() {
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
-                                            Nama SK
+                                            No SK
                                         </label>
                                         <input
                                             type="text"

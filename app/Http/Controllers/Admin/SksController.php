@@ -96,7 +96,7 @@ class SksController extends Controller
             'village_id'          => 'required',
             'jabatan_id'          => 'required',
             'tahun'          => 'required',
-            'name'          => 'required',
+            'name'          => 'required|unique:sks',
             'tglsk'          => 'required',
         ]);
 
@@ -157,7 +157,7 @@ class SksController extends Controller
         $this->validate(
             $request,
             [
-                'biodata_id'   => 'required',
+                'biodata_id'   => 'required|unique:sktransactions',
             ],
             [
                 'biodata_id.required' => 'biodata harus centang dan pilih satu terlebih dahulu',

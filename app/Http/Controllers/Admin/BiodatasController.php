@@ -55,7 +55,7 @@ class BiodatasController extends Controller
             'village_id'          => 'required',
             'bank_id'          => 'required',
             'name'          => 'required',
-            'nik'          => 'required',
+            'nik'          => 'required|max:16|min:16|unique:biodatas',
             'alamat'          => 'required',
             'tglLahir'          => 'required',
             'norek'          => 'required',
