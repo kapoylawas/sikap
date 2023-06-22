@@ -34,7 +34,7 @@ class BiodatasController extends Controller
         $subdistricts = Subdistrict::all();
         $villages = Village::all();
         $banks = Bank::all();
-        
+
         //return inertia
         return inertia('Admin/Biodata/Create', [
             'cities' => $cities,
@@ -65,11 +65,11 @@ class BiodatasController extends Controller
             'foto'         => 'required|image|mimes:jpeg,jpg,png|max:4000',
         ]);
 
-        // //upload ktp
+        //upload ktp
         $filektp = $request->file('filektp');
         $filektp->storeAs('public/ktp', $filektp->hashName());
 
-        // //upload buku tabungan
+        //upload buku tabungan
         $filebukutabungan = $request->file('filebukutabungan');
         $filebukutabungan->storeAs('public/bukutabungan', $filebukutabungan->hashName());
 
@@ -104,9 +104,9 @@ class BiodatasController extends Controller
         $biodatas = Biodata::findOrFail($id);
 
         //remove image
-        Storage::disk('local')->delete('public/ktp/'.basename($biodatas->ktp));
-        Storage::disk('local')->delete('public/bukutabungan/'.basename($biodatas->filebukutabungan));
-        Storage::disk('local')->delete('public/foto/'.basename($biodatas->foto));
+        Storage::disk('local')->delete('public/ktp/' . basename($biodatas->ktp));
+        Storage::disk('local')->delete('public/bukutabungan/' . basename($biodatas->filebukutabungan));
+        Storage::disk('local')->delete('public/foto/' . basename($biodatas->foto));
 
         //delete
         $biodatas->delete();
@@ -133,5 +133,93 @@ class BiodatasController extends Controller
             'villages' => $villages,
             'banks' => $banks,
         ]);
+    }
+
+    public function update(Request $request, Biodata $biodata)
+    {
+
+        //check ktp update
+        if ($request->file('filektp')) {
+
+            //upload ktp
+            $filektp = $request->file('filektp');
+            $filektp->storeAs('public/ktp', $filektp->hashName());
+
+            //update category with new file
+            $biodata->update([
+                'city_id'          => $request->city_id,
+                'subdistrict_id'          => $request->subdistrict_id,
+                'village_id'          => $request->village_id,
+                'bank_id'          => $request->bank_id,
+                'name'          => $request->name,
+                'nik'          => $request->nik,
+                'alamat'          => $request->alamat,
+                'tglLahir'          => $request->tglLahir,
+                'norek'          => $request->norek,
+                'nohp'          => $request->nohp,
+                'filektp'         => $filektp->hashName(),
+            ]);
+        }
+
+        if ($request->file('filebukutabungan')) {
+
+            //upload buku tabungan
+            $filebukutabungan = $request->file('filebukutabungan');
+            $filebukutabungan->storeAs('public/bukutabungan', $filebukutabungan->hashName());
+
+            //update biodata with new file
+            $biodata->update([
+                'city_id'          => $request->city_id,
+                'subdistrict_id'          => $request->subdistrict_id,
+                'village_id'          => $request->village_id,
+                'bank_id'          => $request->bank_id,
+                'name'          => $request->name,
+                'nik'          => $request->nik,
+                'alamat'          => $request->alamat,
+                'tglLahir'          => $request->tglLahir,
+                'norek'          => $request->norek,
+                'nohp'          => $request->nohp,
+                'filebukutabungan'         => $filebukutabungan->hashName(),
+            ]);
+        }
+
+        if ($request->file('foto')) {
+
+            //upload foto
+            $foto = $request->file('foto');
+            $foto->storeAs('public/foto', $foto->hashName());
+
+            //update biodata with new file
+            $biodata->update([
+                'city_id'          => $request->city_id,
+                'subdistrict_id'          => $request->subdistrict_id,
+                'village_id'          => $request->village_id,
+                'bank_id'          => $request->bank_id,
+                'name'          => $request->name,
+                'nik'          => $request->nik,
+                'alamat'          => $request->alamat,
+                'tglLahir'          => $request->tglLahir,
+                'norek'          => $request->norek,
+                'nohp'          => $request->nohp,
+                'foto'         => $foto->hashName(),
+            ]);
+        }
+
+        //update biodata
+        $biodata->update([
+            'city_id'          => $request->city_id,
+            'subdistrict_id'          => $request->subdistrict_id,
+            'village_id'          => $request->village_id,
+            'bank_id'          => $request->bank_id,
+            'name'          => $request->name,
+            'nik'          => $request->nik,
+            'alamat'          => $request->alamat,
+            'tglLahir'          => $request->tglLahir,
+            'norek'          => $request->norek,
+            'nohp'          => $request->nohp,
+        ]);
+
+        //redirect
+        return redirect()->route('admin.biodatas.index');
     }
 }

@@ -31,6 +31,41 @@ export default function BiodataEdit() {
     const [filebukutabungan, setFilebukutabungan] = useState(null);
     const [foto, setFoto] = useState(null);
 
+    const updateBiodata = async (e) => {
+        e.preventDefault();
+
+        //sending data
+        Inertia.post(`/admin/biodatas/${biodatas.id}`, {
+            //data
+            city_id: cityID,
+            subdistrict_id: subdistrictsID,
+            village_id: villagesID,
+            bank_id: banksID,
+            name: name,
+            nik: nik,
+            alamat: alamat,
+            tglLahir: tanggalLahir,
+            norek: norek,
+            nohp: nohp,
+            filektp: filektp,
+            filebukutabungan: filebukutabungan,
+            foto: foto,
+            _method: "PUT"
+        }, {
+            onSuccess: () => {
+
+                //show alert
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Data updated successfully!',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
+        });
+    }
+
     return (
         <>
             <Head>
@@ -50,12 +85,12 @@ export default function BiodataEdit() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> Add New
+                                    <i className="fa fa-home"></i> Edit
                                     Biodata
                                 </span>
                             </div>
                             <div className="card-body">
-                                <form>
+                                <form onSubmit={updateBiodata}>
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
                                             Kota
