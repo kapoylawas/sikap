@@ -157,7 +157,7 @@ class SksController extends Controller
         $this->validate(
             $request,
             [
-                'biodata_id'   => 'required|unique:sktransactions',
+                'biodata_id'   => 'required',
             ],
             [
                 'biodata_id.required' => 'biodata harus centang dan pilih satu terlebih dahulu',
@@ -169,9 +169,12 @@ class SksController extends Controller
 
         //insert database
         foreach ($request->biodata_id as $b) {
-            $sk->sktransactions()->create([
-                'biodata_id'     => $b,
-            ]);
+            $dobel = Sktransaction::where('sk_id',$request->sk_id)->where('biodata_id',$b)->first();
+            if (!$dobel) {
+                $sk->sktransactions()->create([
+                    'biodata_id'     => $b,
+                ]);
+            }
         }
 
         //return back

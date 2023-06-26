@@ -12,6 +12,7 @@ class Sktransaction extends Model
     protected $fillable = [
         'sk_id',
         'biodata_id',
+        'unik',
     ];
 
     public function biodata()
