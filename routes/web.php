@@ -82,6 +82,10 @@ Route::prefix('admin')->group(function () {
        Route::resource('/jabatans', \App\Http\Controllers\Admin\JobsController::class, ['as' => 'admin'])
        ->middleware('permission:jabatans.index|jabatans.create|jabatans.edit|jabatans.delete');
 
+        // route resource Honor
+       Route::resource('/honor', \App\Http\Controllers\Admin\HonorController::class, ['as' => 'admin'])
+       ->middleware('permission:honor.index|honor.create|honor.edit|honor.delete');
+
         // route resource biodata
        Route::resource('/biodatas', \App\Http\Controllers\Admin\BiodatasController::class, ['as' => 'admin'])
        ->middleware('permission:biodatas.index|biodatas.create|biodatas.edit|biodatas.delete');
