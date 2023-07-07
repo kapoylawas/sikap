@@ -19,8 +19,7 @@ import Delete from "../../../Shared/Delete";
 import Pagination from "../../../Shared/Pagination";
 
 export default function HonorIndex() {
-
-    const { honors } = usePage().props;
+    const { honor } = usePage().props;
 
     return (
         <>
@@ -49,10 +48,10 @@ export default function HonorIndex() {
                 </div>
                 <div className="row mt-2 mb-4">
                     <div className="col-12">
-                    <div className="card border-0 rounded shadow-sm border-top-success">
+                        <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> Master Honor
+                                    <i className="fa fa-paper"></i> Data Honor
                                 </span>
                             </div>
                             <div className="card-body">
@@ -93,36 +92,42 @@ export default function HonorIndex() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {honors.data.map((honor, index) => (
+                                            {honor.data.map((hn, index) => (
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
-                                                            (banks.current_page -
+                                                            (honor.current_page -
                                                                 1) *
-                                                                banks.per_page}
+                                                                honor.per_page}
                                                     </td>
-                                                    <td>{honor.tahun}</td>
-                                                    <td>{honor.tahun}</td>
-                                                    <td>{honor.tahun}</td>
+                                                    <td>{hn.jabatan.name}</td>
+                                                    <td>{hn.tahun}</td>
+                                                    <td>{hn.nominal}</td>
                                                     <td className="text-center">
+                                                        <Link
+                                                            href={`/admin/honor/${hn.id}`}
+                                                            className="btn btn-primary btn-sm me-2"
+                                                        >
+                                                            <i className="fa fa-plus-circle"></i>
+                                                        </Link>
                                                         {hasAnyPermission([
-                                                            "banks.edit",
+                                                            "honor.edit",
                                                         ]) && (
                                                             <Link
-                                                                href={`/admin/honor/${honor.id}/edit`}
+                                                                href={`/admin/honor/${hn.id}/edit`}
                                                                 className="btn btn-primary btn-sm me-2"
                                                             >
                                                                 <i className="fa fa-pencil-alt"></i>
                                                             </Link>
                                                         )}
                                                         {hasAnyPermission([
-                                                            "banks.delete",
+                                                            "honor.delete",
                                                         ]) && (
                                                             <Delete
                                                                 URL={
                                                                     "/admin/honor"
                                                                 }
-                                                                id={honor.id}
+                                                                id={hn.id}
                                                             />
                                                         )}
                                                     </td>
@@ -132,12 +137,9 @@ export default function HonorIndex() {
                                     </table>
                                 </div>
                                 <br />
-                                <Pagination
-                                    links={honors.links}
-                                    align={"end"}
-                                />
+                                <Pagination links={honor.links} align={"end"} />
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div>
             </LayoutAccount>
