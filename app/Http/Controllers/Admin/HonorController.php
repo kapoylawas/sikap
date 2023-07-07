@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Honor;
 use Illuminate\Http\Request;
+use App\Models\Jabatan;
 
 class HonorController extends Controller
 {
@@ -19,6 +20,17 @@ class HonorController extends Controller
 
         return inertia('Admin/Honor/Index', [
             'honors' => $honors
+        ]);
+    }
+
+    public function create()
+    {
+
+        $jabatans = Jabatan::all();
+
+        //return inertia
+        return inertia('Admin/Honor/Create', [
+            'jabatans' => $jabatans,
         ]);
     }
 }
