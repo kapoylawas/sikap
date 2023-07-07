@@ -18,11 +18,11 @@ export default function HonorEdit() {
     const { errors, jabatans, honor } = usePage().props;
 
     //state
-    const [jobID, setJobID] = useState(sks.jabatan_id);
-    const [tahun, setTahun] = useState(sks.tahun);
-    const [nominal, setNominal] = useState(sks.nominal);
+    const [jobID, setJobID] = useState(honor.jabatan_id);
+    const [tahun, setTahun] = useState(honor.tahun);
+    const [nominal, setNominal] = useState(honor.nominal);
     
-    const updateSK = async (e) => {
+    const updateHonor = async (e) => {
         e.preventDefault();
 
         //sending data
