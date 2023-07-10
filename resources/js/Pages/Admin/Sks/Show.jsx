@@ -21,7 +21,6 @@ import Delete from "../../../Shared/Delete";
 export default function SksShow() {
     const { errors, biodatas, sks } = usePage().props;
 
-    console.log(sks);
     const [biodatasData, setBiodataData] = useState([]);
 
     //define method "handleCheckboxChange"

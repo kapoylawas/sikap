@@ -20,7 +20,7 @@ import Pagination from "../../../Shared/Pagination";
 
 export default function BiodatasIndex() {
     const { biodatas } = usePage().props;
-    console.log(biodatas);
+
     return (
         <>
             <Head>
