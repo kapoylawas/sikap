@@ -15,10 +15,12 @@ import Swal from "sweetalert2";
 
 export default function SksCreate() {
     //destruct props "errors" & "datas"
-    const { errors, villages, jabatans } = usePage().props;
+    const { errors, villages, jabatans, subdistricts } = usePage().props;
 
     //state
     const [villageID, setVillageID] = useState("");
+    const [subdistrictID, setSubdistrictID] = useState("");
+    console.log(subdistrictID);
     const [jobID, setJobID] = useState("");
     const [tahun, setTahun] = useState("");
     const [name, setName] = useState("");
@@ -34,6 +36,7 @@ export default function SksCreate() {
             {
                 //data
                 village_id: villageID,
+                subdistrict_id: subdistrictID,
                 jabatan_id: jobID,
                 tahun: tahun,
                 name: name,
@@ -81,7 +84,7 @@ export default function SksCreate() {
                                 <form onSubmit={storeSk}>
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
-                                            Desa
+                                            Kelurahan/Desa
                                         </label>
                                         <select
                                             className="form-select"
@@ -106,6 +109,35 @@ export default function SksCreate() {
                                     {errors.village_id && (
                                         <div className="alert alert-danger">
                                             {errors.village_id}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Kecamatan
+                                        </label>
+                                        <select
+                                            className="form-select"
+                                            value={subdistrictID}
+                                            onChange={(e) =>
+                                                setSubdistrictID(e.target.value)
+                                            }
+                                        >
+                                            <option value="">
+                                                -- Select Kecamatan --
+                                            </option>
+                                            {subdistricts.map((subdistrict) => (
+                                                <option
+                                                    value={subdistrict.id}
+                                                    key={subdistrict.id}
+                                                >
+                                                    {subdistrict.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    {errors.subdistrict_id && (
+                                        <div className="alert alert-danger">
+                                            {errors.subdistrict_id}
                                         </div>
                                     )}
                                     <div className="mb-3">

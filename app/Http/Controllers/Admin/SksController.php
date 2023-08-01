@@ -7,6 +7,7 @@ use App\Models\Biodata;
 use App\Models\Jabatan;
 use App\Models\Sk;
 use App\Models\Sktransaction;
+use App\Models\Subdistrict;
 use App\Models\Village;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -32,11 +33,13 @@ class SksController extends Controller
     {
 
         $villages = Village::all();
+        $subdistricts = Subdistrict::all();
         $jabatans = Jabatan::all();
 
         //return inertia
         return inertia('Admin/Sks/Create', [
             'villages' => $villages,
+            'subdistricts' => $subdistricts,
             'jabatans' => $jabatans,
         ]);
     }
@@ -48,6 +51,7 @@ class SksController extends Controller
          */
         $this->validate($request, [
             'village_id'          => 'required',
+            'subdistrict_id'          => 'required',
             'jabatan_id'          => 'required',
             'tahun'          => 'required',
             'name'          => 'required',
@@ -61,6 +65,7 @@ class SksController extends Controller
         //create sk
         Sk::create([
             'village_id'       => $request->village_id,
+            'subdistrict_id'       => $request->subdistrict_id,
             'jabatan_id'       => $request->jabatan_id,
             'tahun'       => $request->tahun,
             'name'       => $request->name,
@@ -77,12 +82,14 @@ class SksController extends Controller
         //get 
         $sks = Sk::findOrFail($id);
         $villages = Village::all();
+        $subdistricts = Subdistrict::all();
         $jabatans = Jabatan::all();
 
         //render with inertia
         return inertia('Admin/Sks/Edit', [
             'sks'    => $sks,
             'villages'    => $villages,
+            'subdistricts'    => $subdistricts,
             'jabatans'    => $jabatans,
         ]);
     }
@@ -94,9 +101,10 @@ class SksController extends Controller
          */
         $this->validate($request, [
             'village_id'          => 'required',
+            'subdistrict_id'       => 'required',
             'jabatan_id'          => 'required',
             'tahun'          => 'required',
-            'name'          => 'required|unique:sks',
+            'name'          => 'required',
             'tglsk'          => 'required',
         ]);
 
@@ -113,6 +121,7 @@ class SksController extends Controller
             //update category with new file
             $sk->update([
                 'village_id'       => $request->village_id,
+                'subdistrict_id'       => $request->subdistrict_id,
                 'jabatan_id'       => $request->jabatan_id,
                 'tahun'       => $request->tahun,
                 'name'       => $request->name,
@@ -124,6 +133,7 @@ class SksController extends Controller
         //update sk
         $sk->update([
             'village_id'       => $request->village_id,
+            'subdistrict_id'       => $request->subdistrict_id,
             'jabatan_id'       => $request->jabatan_id,
             'tahun'       => $request->tahun,
             'name'       => $request->name,

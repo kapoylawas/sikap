@@ -13,6 +13,7 @@ class Sk extends Model
 
     protected $fillable = [
         'village_id',
+        'subdistrict_id',
         'jabatan_id',
         'tahun',
         'name',

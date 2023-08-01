@@ -15,10 +15,12 @@ import Swal from "sweetalert2";
 
 export default function SksEdit() {
     //destruct props "errors" & "datas"
-    const { errors, villages, jabatans, sks } = usePage().props;
+    const { errors, villages, jabatans, sks, subdistricts } = usePage().props;
 
     //state
     const [villageID, setVillageID] = useState(sks.village_id);
+    const [subdistrictID, setSubdistrictID] = useState(sks.subdistrict_id);
+    console.log(subdistrictID);
     const [jobID, setJobID] = useState(sks.jabatan_id);
     const [tahun, setTahun] = useState(sks.tahun);
     const [name, setName] = useState(sks.name);
@@ -33,6 +35,7 @@ export default function SksEdit() {
 
             //data
             village_id: villageID,
+            subdistrict_id: subdistrictID,
             jabatan_id: jobID,
             tahun: tahun,
             name: name,
@@ -105,6 +108,35 @@ export default function SksEdit() {
                                     {errors.village_id && (
                                         <div className="alert alert-danger">
                                             {errors.village_id}
+                                        </div>
+                                    )}
+                                    <div className="mb-3">
+                                        <label className="form-label fw-bold">
+                                            Kecamatan
+                                        </label>
+                                        <select
+                                            className="form-select"
+                                            value={subdistrictID}
+                                            onChange={(e) =>
+                                                setSubdistrictID(e.target.value)
+                                            }
+                                        >
+                                            <option value="">
+                                                -- Select Kecamatan --
+                                            </option>
+                                            {subdistricts.map((subdistrict) => (
+                                                <option
+                                                    value={subdistrict.id}
+                                                    key={subdistrict.id}
+                                                >
+                                                    {subdistrict.name}
+                                                </option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                    {errors.subdistrict_id && (
+                                        <div className="alert alert-danger">
+                                            {errors.subdistrict_id}
                                         </div>
                                     )}
                                     <div className="mb-3">
