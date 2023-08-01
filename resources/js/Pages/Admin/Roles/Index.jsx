@@ -93,23 +93,6 @@ export default function RolesIndex() {
                                                                 roles.per_page}
                                                     </td>
                                                     <td>{role.name}</td>
-                                                    {/* <td>
-                                                        {role.permissions.map(
-                                                            (
-                                                                permission,
-                                                                index
-                                                            ) => (
-                                                                <button
-                                                                    className="btn btn-success btn-sm shadow-sm border-0 ms-2 mb-2"
-                                                                    key={index}
-                                                                >
-                                                                    {
-                                                                        permission.name
-                                                                    }
-                                                                </button>
-                                                            )
-                                                        )}
-                                                    </td> */}
                                                     <td className="text-center">
                                                         {hasAnyPermission([
                                                             "roles.edit",

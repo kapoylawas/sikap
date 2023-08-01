@@ -52,13 +52,42 @@ class VillageController extends Controller
             'city_id'   => 'required',
             'subdistrict_id'   => 'required',
             'name'   => 'required',
-           
         ]);
 
         /**
          * Create kecamatan
          */
         Village::create([
+            'city_id'   => $request->city_id,
+            'subdistrict_id'   => $request->subdistrict_id,
+            'name'   => $request->name,
+        ]);
+
+        //redirect
+        return redirect()->route('admin.villages.index');
+    }
+
+    public function edit($id)
+    {
+        //get village
+        $village = Village::findOrFail($id);
+
+        $cities = City::all();
+        $subdistricts = Subdistrict::all();
+
+        //render with inertia
+        return inertia('Admin/Village/Edit', [
+            'village'          => $village,
+            'subdistricts'          => $subdistricts,
+            'cities'          => $cities,
+        ]);
+    }
+
+    public function update(Request $request, Village $village)
+    {
+
+        //update city
+        $village->update([
             'city_id'   => $request->city_id,
             'subdistrict_id'   => $request->subdistrict_id,
             'name'   => $request->name,

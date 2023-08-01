@@ -12,10 +12,13 @@ import { Inertia } from "@inertiajs/inertia";
 
 //import Sweet Alert
 import Swal from "sweetalert2";
+import Pagination from "../../../Shared/Pagination";
+import Search from "../../../Shared/Search";
 
 export default function RoleEdit() {
     //destruct props "errors", "permissions" & "role"
     const { errors, permissions, role } = usePage().props;
+    console.log(permissions);
 
     //define state
     const [name, setName] = useState(role.name);
@@ -112,42 +115,99 @@ export default function RoleEdit() {
                                         </div>
                                     )}
                                     <hr />
+                                    
                                     <div className="mb-3">
                                         <label className="fw-bold">
                                             Permissions
                                         </label>
                                         <br />
-                                        {permissions.map(
-                                            (permission, index) => (
-                                                <div
-                                                    className="form-check form-check-inline"
-                                                    key={index}
-                                                >
-                                                    <input
-                                                        className="form-check-input"
-                                                        type="checkbox"
-                                                        value={permission.name}
-                                                        defaultChecked={permissionsData.some(
-                                                            (name) =>
-                                                                name ===
-                                                                    permission.name ??
-                                                                true
+                                        <div className="card-body">
+                                            <div className="table-responsive">
+                                                <table className="table table-bordered table-striped table-hovered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th
+                                                                scope="col"
+                                                                style={{
+                                                                    width: "5%",
+                                                                }}
+                                                            >
+                                                                No.
+                                                            </th>
+                                                            <th
+                                                                scope="col"
+                                                                style={{
+                                                                    width: "15%",
+                                                                }}
+                                                            >
+                                                                Role Name Route
+                                                            </th>
+                                                            <th
+                                                                scope="col"
+                                                                style={{
+                                                                    width: "15%",
+                                                                }}
+                                                            >
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {permissions.data.map(
+                                                            (
+                                                                permission,
+                                                                index
+                                                            ) => (
+                                                                <>
+                                                                    <tr
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                    >
+                                                                        <td className="text-center">
+                                                                            {++index +
+                                                                                (permissions.current_page -
+                                                                                    1) *
+                                                                                    permissions.per_page}
+                                                                        </td>
+                                                                        <td>
+                                                                            {
+                                                                                permission.name
+                                                                            }
+                                                                        </td>
+                                                                        <td>
+                                                                            <input
+                                                                                className="form-check-input"
+                                                                                type="checkbox"
+                                                                                value={
+                                                                                    permission.name
+                                                                                }
+                                                                                defaultChecked={permissionsData.some(
+                                                                                    (
+                                                                                        name
+                                                                                    ) =>
+                                                                                        name ===
+                                                                                            permission.name ??
+                                                                                        true
+                                                                                )}
+                                                                                onChange={
+                                                                                    handleCheckboxChange
+                                                                                }
+                                                                                id={`check-${permission.id}`}
+                                                                            />
+                                                                        </td>
+                                                                    </tr>
+                                                                </>
+                                                            )
                                                         )}
-                                                        onChange={
-                                                            handleCheckboxChange
-                                                        }
-                                                        id={`check-${permission.id}`}
-                                                    />
-                                                    <label
-                                                        className="form-check-label"
-                                                        htmlFor={`check-${permission.id}`}
-                                                    >
-                                                        {permission.name}
-                                                    </label>
-                                                </div>
-                                            )
-                                        )}
-
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <Pagination
+                                            links={permissions.links}
+                                            align={"end"}
+                                        />
                                         {errors.permissions && (
                                             <div className="alert alert-danger mt-2">
                                                 {errors.permissions}

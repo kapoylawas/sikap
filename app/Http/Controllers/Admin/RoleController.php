@@ -61,7 +61,13 @@ class RoleController extends Controller
         $role = Role::with('permissions')->findOrFail($id);
 
         //get permission all
-        $permissions = Permission::all();
+        // $permissions = Permission::all();
+
+
+        $permissions = Permission::when(request()->q, function($permissions) {
+            $permissions = $permissions->where('name', 'like', '%'. request()->q . '%');
+        })->latest()->paginate(10);
+        
 
         //render with inertia
         return inertia('Admin/Roles/Edit', [
