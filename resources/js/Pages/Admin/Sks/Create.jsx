@@ -141,7 +141,7 @@ export default function SksCreate() {
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
-                                            Jabatan
+                                            Kelompok Jabatan
                                         </label>
                                         <select
                                             className="form-select"
