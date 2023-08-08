@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Honor;
+use App\Models\Jabatan;
 use Illuminate\Http\Request;
 
 class HonorController extends Controller
@@ -20,5 +21,37 @@ class HonorController extends Controller
         return inertia('Admin/Honor/Index', [
             'honors' => $honors
         ]);
+    }
+
+    public function create() 
+    {
+
+        $jabatans = Jabatan::all();
+
+        return inertia('Admin/Honor/Create', [
+            'jabatans' => $jabatans,
+        ]);
+    }
+
+    public function store(Request $request)
+    { 
+        /**
+         * validate
+         */
+        $this->validate($request, [
+            'jabatan_id'          => 'required',
+            'tahun'          => 'required',
+            'nominal'          => 'required',
+        ]);
+
+        //create honor
+        Honor::create([
+            'jabatan_id'       => $request->jabatan_id,
+            'tahun'       => $request->tahun,
+            'nominal'       => $request->nominal,
+        ]);
+
+        //redirect
+        return redirect()->route('admin.honor.index');
     }
 }

@@ -20,7 +20,6 @@ export default function SksCreate() {
     //state
     const [villageID, setVillageID] = useState("");
     const [subdistrictID, setSubdistrictID] = useState("");
-    console.log(subdistrictID);
     const [jobID, setJobID] = useState("");
     const [tahun, setTahun] = useState("");
     const [name, setName] = useState("");

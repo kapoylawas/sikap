@@ -21,6 +21,7 @@ import Pagination from "../../../Shared/Pagination";
 export default function HonorIndex() {
 
     const { honors } = usePage().props;
+    console.log(honors);
 
     return (
         <>
@@ -97,13 +98,13 @@ export default function HonorIndex() {
                                                 <tr key={index}>
                                                     <td className="text-center">
                                                         {++index +
-                                                            (banks.current_page -
+                                                            (honors.current_page -
                                                                 1) *
-                                                                banks.per_page}
+                                                                honors.per_page}
                                                     </td>
+                                                    <td>{honor.jabatan.name}</td>
                                                     <td>{honor.tahun}</td>
-                                                    <td>{honor.tahun}</td>
-                                                    <td>{honor.tahun}</td>
+                                                    <td>{honor.nominal}</td>
                                                     <td className="text-center">
                                                         {hasAnyPermission([
                                                             "banks.edit",
