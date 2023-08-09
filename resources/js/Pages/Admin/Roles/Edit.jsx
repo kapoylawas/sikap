@@ -18,13 +18,17 @@ import Search from "../../../Shared/Search";
 export default function RoleEdit() {
     //destruct props "errors", "permissions" & "role"
     const { errors, permissions, role } = usePage().props;
-    console.log(permissions);
+
+    // console.log('permissions',permissions);
 
     //define state
     const [name, setName] = useState(role.name);
     const [permissionsData, setPermissionsData] = useState(
         role.permissions.map((obj) => obj.name)
     );
+
+    console.log('role',permissionsData);
+
 
     //define method "handleCheckboxChange"
     const handleCheckboxChange = (e) => {
@@ -42,6 +46,8 @@ export default function RoleEdit() {
         //set data to state
         setPermissionsData(data);
     };
+
+    
 
     //define method
     const updateRole = async (e) => {
@@ -84,6 +90,15 @@ export default function RoleEdit() {
                     <i className="fa fa-long-arrow-alt-left me-2"></i>
                     Kembali
                 </Link>
+                <div className="row mt-5">
+                    <div className="col-md-8">
+                        <div className="row">
+                            <div class="col-md-9 col-12 mb-2">
+                                <Search URL={`/admin/roles/${role.id}/edit`} />
+                            </div>
+                        </div>
+                    </div>
+                </div>  
                 <div className="row mt-3">
                     <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
@@ -115,7 +130,6 @@ export default function RoleEdit() {
                                         </div>
                                     )}
                                     <hr />
-                                    
                                     <div className="mb-3">
                                         <label className="fw-bold">
                                             Permissions

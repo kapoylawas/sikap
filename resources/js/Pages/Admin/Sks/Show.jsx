@@ -17,9 +17,11 @@ import Swal from "sweetalert2";
 import Pagination from "../../../Shared/Pagination";
 
 import Delete from "../../../Shared/Delete";
+import Search from "../../../Shared/Search";
 
 export default function SksShow() {
     const { errors, biodatas, sks } = usePage().props;
+    console.log(sks);
 
     const [biodatasData, setBiodataData] = useState([]);
 
@@ -29,7 +31,12 @@ export default function SksShow() {
         let data = biodatasData;
 
         //push data on state
-        data.push(e.target.value);
+        if (data.some((name) => name === e.target.value)) {
+            data = data.filter((name) => name !== e.target.value);
+        } else {
+            //push new item to array
+            data.push(e.target.value);
+        }
 
         //set data to state
         setBiodataData(data);
@@ -80,7 +87,16 @@ export default function SksShow() {
                     <i className="fa fa-long-arrow-alt-left me-2"></i>
                     Kembali
                 </Link>
-                <div className="row mt-4">
+                <div className="row mt-3">
+                    <div className="col-md-8">
+                        <div className="row">
+                            <div class="col-md-9 col-12 mb-2">
+                                <Search URL={`/admin/sks/${sks.id}`} />
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div className="row mt-3">
                     <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
@@ -92,31 +108,83 @@ export default function SksShow() {
                             <div className="card-body">
                                 <form onSubmit={storeTransaction}>
                                     <div className="mb-3">
-                                        <label className="fw-bold">Nama Biodata</label>
+                                        <label className="fw-bold">
+                                            Nama Biodata
+                                        </label>
                                         <br />
-                                        {biodatas.map((biodata, index) => (
-                                            <div
-                                                className="form-check form-check-inline"
-                                                key={index}
-                                            >
-                                                <input
-                                                    className="form-check-input"
-                                                    type="checkbox"
-                                                    value={biodata.id}
-                                                    onChange={
-                                                        handleCheckboxChange
-                                                    }
-                                                    id={`check-${biodata.id}`}
-                                                />
-                                                <label
-                                                    className="form-check-label"
-                                                    htmlFor={`check-${biodata.id}`}
-                                                >
-                                                    {biodata.name}
-                                                </label>
+                                        <div className="card-body">
+                                            <div className="table-responsive">
+                                                <table className="table table-bordered table-striped table-hovered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th
+                                                                scope="col"
+                                                                style={{
+                                                                    width: "5%",
+                                                                }}
+                                                            >
+                                                                No.
+                                                            </th>
+                                                            <th
+                                                                scope="col"
+                                                                style={{
+                                                                    width: "15%",
+                                                                }}
+                                                            >
+                                                                Name
+                                                            </th>
+                                                            <th
+                                                                scope="col"
+                                                                style={{
+                                                                    width: "15%",
+                                                                }}
+                                                            >
+                                                                Action
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {biodatas.data.map(
+                                                            (
+                                                                biodata,
+                                                                index
+                                                            ) => (
+                                                                <tr key={index}>
+                                                                    <td className="text-center">
+                                                                        {++index +
+                                                                            (biodatas.current_page -
+                                                                                1) *
+                                                                                biodatas.per_page}
+                                                                    </td>
+                                                                    <td>
+                                                                        {
+                                                                            biodata.name
+                                                                        }
+                                                                    </td>
+                                                                    <td>
+                                                                        <input
+                                                                            className="form-check-input"
+                                                                            type="checkbox"
+                                                                            value={
+                                                                                biodata.id
+                                                                            }
+                                                                            onChange={
+                                                                                handleCheckboxChange
+                                                                            }
+                                                                            id={`check-${biodata.id}`}
+                                                                        />
+                                                                    </td>
+                                                                </tr>
+                                                            )
+                                                        )}
+                                                    </tbody>
+                                                </table>
                                             </div>
-                                        ))}
-
+                                        </div>
+                                        <Pagination
+                                            links={biodatas.links}
+                                            align={"end"}
+                                        />
                                         {errors.biodata_id && (
                                             <div className="alert alert-danger mt-2">
                                                 {errors.biodata_id}
@@ -147,7 +215,8 @@ export default function SksShow() {
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-hospital"></i> Biodata SK
+                                    <i className="fa fa-hospital"></i> Biodata
+                                    SK
                                 </span>
                             </div>
                             <div className="card-body">
@@ -194,9 +263,10 @@ export default function SksShow() {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {sks.sktransactions.data.map((sk, index) => (
-                                                <tr key={index}>
-                                                    <td className="text-center">
+                                            {sks.sktransactions.data.map(
+                                                (sk, index) => (
+                                                    <tr key={index}>
+                                                        <td className="text-center">
                                                             {++index +
                                                                 (sks
                                                                     .sktransactions
@@ -206,20 +276,29 @@ export default function SksShow() {
                                                                         .sktransactions
                                                                         .per_page}
                                                         </td>
-                                                    <td>{sk.biodata.name}</td>
-                                                    <td>{sk.biodata.nik}</td>
-                                                    <td>{sk.biodata.nohp}</td>
-                                                    <td>{sk.biodata.norek}</td>
-                                                    <td className="text-center">
+                                                        <td>
+                                                            {sk.biodata.name}
+                                                        </td>
+                                                        <td>
+                                                            {sk.biodata.nik}
+                                                        </td>
+                                                        <td>
+                                                            {sk.biodata.nohp}
+                                                        </td>
+                                                        <td>
+                                                            {sk.biodata.norek}
+                                                        </td>
+                                                        <td className="text-center">
                                                             <Delete
                                                                 URL={
                                                                     "/admin/sks/destroy_transaction"
                                                                 }
                                                                 id={sk.id}
                                                             />
-                                                    </td>
-                                                </tr>
-                                            ))}
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            )}
                                         </tbody>
                                     </table>
                                 </div>

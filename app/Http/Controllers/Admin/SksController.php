@@ -148,7 +148,13 @@ class SksController extends Controller
     {
         //get sk by ID
         $sks = Sk::findOrFail($id);
-        $biodatas = Biodata::all();
+        // $biodatas = Biodata::all();
+
+        $biodatas = Biodata::when(request()->q, function ($biodatas) {
+            $biodatas = $biodatas->where('name', 'like', '%' . request()->q . '%');
+        })->latest()->paginate(5);
+
+        $biodatas->appends(['q' => request()->q]);
 
         $sks->setRelation('sktransactions', $sks->sktransactions()->with('biodata')->paginate(5));
 

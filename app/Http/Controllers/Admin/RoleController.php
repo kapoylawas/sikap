@@ -55,19 +55,17 @@ class RoleController extends Controller
         return redirect()->route('admin.roles.index');
     }
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //get role
-        $role = Role::with('permissions')->findOrFail($id);
-
-        //get permission all
-        // $permissions = Permission::all();
-
-
         $permissions = Permission::when(request()->q, function($permissions) {
             $permissions = $permissions->where('name', 'like', '%'. request()->q . '%');
         })->latest()->paginate(10);
+        //get role
+        $role = Role::with('permissions')->findOrFail($id);
+
         
+        //append query string to pagination links
+        $permissions->appends(['q' => request()->q]);
 
         //render with inertia
         return inertia('Admin/Roles/Edit', [

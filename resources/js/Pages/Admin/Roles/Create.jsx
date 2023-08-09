@@ -23,15 +23,20 @@ export default function RoleCreate() {
 
     //define method "handleCheckboxChange"
     const handleCheckboxChange = (e) => {
-        //define data
         let data = permissionsData;
 
-        //push data on state
-        data.push(e.target.value);
+        //check item already exists, if so, remove with filter
+        if (data.some((name) => name === e.target.value)) {
+            data = data.filter((name) => name !== e.target.value);
+        } else {
+            //push new item to array
+            data.push(e.target.value);
+        }
 
         //set data to state
         setPermissionsData(data);
     };
+
 
     //define method
     const storeRole = async (e) => {
