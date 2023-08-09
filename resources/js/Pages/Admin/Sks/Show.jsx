@@ -198,12 +198,6 @@ export default function SksShow() {
                                         >
                                             <i className="fa fa-save"></i> Save
                                         </button>
-                                        <button
-                                            type="reset"
-                                            className="btn btn-md btn-warning"
-                                        >
-                                            <i className="fa fa-redo"></i> Reset
-                                        </button>
                                     </div>
                                 </form>
                             </div>
