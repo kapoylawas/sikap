@@ -37,6 +37,11 @@ class Biodata extends Model
         return $this->belongsTo(Subdistrict::class);
     }
 
+    public function sktransaction()
+    {
+        return $this->hasMany(sktransaction::class);
+    }
+
     public function village()
     {
         return $this->belongsTo(Village::class);

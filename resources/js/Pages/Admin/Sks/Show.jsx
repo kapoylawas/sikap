@@ -21,7 +21,7 @@ import Search from "../../../Shared/Search";
 
 export default function SksShow() {
     const { errors, biodatas, sks } = usePage().props;
-    console.log(sks);
+    // console.log(biodatas);
 
     const [biodatasData, setBiodataData] = useState([]);
 

@@ -47,7 +47,7 @@ export default function BiodatasIndex() {
                     </div>
                 </div>
                 <div className="row mt-2 mb-4">
-                <div className="col-12">
+                    <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
@@ -87,12 +87,6 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Bank
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
                                                     Name
                                                 </th>
                                                 <th
@@ -105,124 +99,71 @@ export default function BiodatasIndex() {
                                                     scope="col"
                                                     style={{ width: "15%" }}
                                                 >
-                                                    Alamat
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    No. Rekening
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    No. HP
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Foto KTP
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Foto Buku Tabungan
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
-                                                    Foto
-                                                </th>
-                                                <th
-                                                    scope="col"
-                                                    style={{ width: "15%" }}
-                                                >
                                                     Actions
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {biodatas.data.map((biodata, index) => (
-                                                <tr key={index}>
-                                                    <td className="text-center">
-                                                        {++index +
-                                                            (biodatas.current_page -
-                                                                1) *
-                                                                biodatas.per_page}
-                                                    </td>
-                                                    <td>{biodata.city.name}</td>
-                                                    <td>{biodata.subdistrict.name}</td>
-                                                    <td>{biodata.village.name}</td>
-                                                    <td>{biodata.bank.name}</td>
-                                                    <td>{biodata.name}</td>
-                                                    <td>{biodata.nik}</td>
-                                                    <td>{biodata.alamat}</td>
-                                                    <td>{biodata.norek}</td>
-                                                    <td>{biodata.nohp}</td>
-                                                    <td>
-                                                        <a
-                                                                className="btn btn-success"
-                                                                target="_blank"
-                                                                href={biodata.filektp}
-                                                            >
-                                                                <i className="fa fa-pdf">
-                                                                    {" "}
-                                                                    Lihat
-                                                                </i>{" "}
-                                                            </a>
-                                                    </td>
-                                                    <td>
-                                                        <a
-                                                                className="btn btn-success"
-                                                                target="_blank"
-                                                                href={biodata.filebukutabungan}
-                                                            >
-                                                                <i className="fa fa-pdf">
-                                                                    {" "}
-                                                                    Lihat
-                                                                </i>{" "}
-                                                            </a>
-                                                    </td>
-                                                    <td>
-                                                        <a
-                                                                className="btn btn-success"
-                                                                target="_blank"
-                                                                href={biodata.foto}
-                                                            >
-                                                                <i className="fa fa-pdf">
-                                                                    {" "}
-                                                                    Lihat
-                                                                </i>{" "}
-                                                            </a>
-                                                    </td>
-                                                    <td className="text-center">
-                                                        {hasAnyPermission([
-                                                            "biodatas.edit",
-                                                        ]) && (
+                                            {biodatas.data.map(
+                                                (biodata, index) => (
+                                                    <tr key={index}>
+                                                        <td className="text-center">
+                                                            {++index +
+                                                                (biodatas.current_page -
+                                                                    1) *
+                                                                    biodatas.per_page}
+                                                        </td>
+                                                        <td>
+                                                            {biodata.city.name}
+                                                        </td>
+                                                        <td>
+                                                            {
+                                                                biodata
+                                                                    .subdistrict
+                                                                    .name
+                                                            }
+                                                        </td>
+                                                        <td>
+                                                            {
+                                                                biodata.village
+                                                                    .name
+                                                            }
+                                                        </td>
+                                                        <td>{biodata.name}</td>
+                                                        <td>{biodata.nik}</td>
+                                                        <td className="text-center">
                                                             <Link
-                                                                href={`/admin/biodatas/${biodata.id}/edit`}
+                                                                href={`/admin/biodatas/${biodata.id}`}
                                                                 className="btn btn-primary btn-sm me-2"
                                                             >
-                                                                <i className="fa fa-pencil-alt"></i>
+                                                                <i className="fa fa-address-card"></i>
                                                             </Link>
-                                                        )}
-                                                        {hasAnyPermission([
-                                                            "biodatas.delete",
-                                                        ]) && (
-                                                            <Delete
-                                                                URL={
-                                                                    "/admin/biodatas"
-                                                                }
-                                                                id={biodata.id}
-                                                            />
-                                                        )}
-                                                    </td>
-                                                </tr>
-                                            ))}
+                                                            {hasAnyPermission([
+                                                                "biodatas.edit",
+                                                            ]) && (
+                                                                <Link
+                                                                    href={`/admin/biodatas/${biodata.id}/edit`}
+                                                                    className="btn btn-primary btn-sm me-2"
+                                                                >
+                                                                    <i className="fa fa-pencil-alt"></i>
+                                                                </Link>
+                                                            )}
+                                                            {hasAnyPermission([
+                                                                "biodatas.delete",
+                                                            ]) && (
+                                                                <Delete
+                                                                    URL={
+                                                                        "/admin/biodatas"
+                                                                    }
+                                                                    id={
+                                                                        biodata.id
+                                                                    }
+                                                                />
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                )
+                                            )}
                                         </tbody>
                                     </table>
                                 </div>

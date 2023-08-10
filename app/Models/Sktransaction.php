@@ -19,4 +19,9 @@ class Sktransaction extends Model
     {
         return $this->belongsTo(Biodata::class);
     }
+
+    public function sk()
+    {
+        return $this->belongsTo(Sk::class);
+    }
 }

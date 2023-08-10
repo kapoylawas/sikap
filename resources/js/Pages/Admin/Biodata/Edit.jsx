@@ -14,11 +14,13 @@ import { Inertia } from "@inertiajs/inertia";
 import Swal from "sweetalert2";
 
 export default function BiodataEdit() {
+    const { errors, biodatas, cities, subdistricts, villages, banks } =
+        usePage().props;
 
-    const { errors, biodatas, cities, subdistricts, villages, banks } = usePage().props;
-    
     const [cityID, setCityID] = useState(biodatas.city_id);
-    const [subdistrictsID, setSubdistrictsID] = useState(biodatas.subdistrict_id);
+    const [subdistrictsID, setSubdistrictsID] = useState(
+        biodatas.subdistrict_id
+    );
     const [villagesID, setVillagesID] = useState(biodatas.village_id);
     const [banksID, setBanksID] = useState(biodatas.bank_id);
     const [name, setName] = useState(biodatas.name);
@@ -35,36 +37,39 @@ export default function BiodataEdit() {
         e.preventDefault();
 
         //sending data
-        Inertia.post(`/admin/biodatas/${biodatas.id}`, {
-            //data
-            city_id: cityID,
-            subdistrict_id: subdistrictsID,
-            village_id: villagesID,
-            bank_id: banksID,
-            name: name,
-            nik: nik,
-            alamat: alamat,
-            tglLahir: tanggalLahir,
-            norek: norek,
-            nohp: nohp,
-            filektp: filektp,
-            filebukutabungan: filebukutabungan,
-            foto: foto,
-            _method: "PUT"
-        }, {
-            onSuccess: () => {
-
-                //show alert
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Data updated successfully!',
-                    icon: 'success',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+        Inertia.post(
+            `/admin/biodatas/${biodatas.id}`,
+            {
+                //data
+                city_id: cityID,
+                subdistrict_id: subdistrictsID,
+                village_id: villagesID,
+                bank_id: banksID,
+                name: name,
+                nik: nik,
+                alamat: alamat,
+                tglLahir: tanggalLahir,
+                norek: norek,
+                nohp: nohp,
+                filektp: filektp,
+                filebukutabungan: filebukutabungan,
+                foto: foto,
+                _method: "PUT",
+            },
+            {
+                onSuccess: () => {
+                    //show alert
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Data updated successfully!",
+                        icon: "success",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                },
             }
-        });
-    }
+        );
+    };
 
     return (
         <>
@@ -81,12 +86,11 @@ export default function BiodataEdit() {
                     Kembali
                 </Link>
                 <div className="row mt-4">
-                <div className="col-12">
+                    <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
                             <div className="card-header">
                                 <span className="font-weight-bold">
-                                    <i className="fa fa-home"></i> Edit
-                                    Biodata
+                                    <i className="fa fa-home"></i> Edit Biodata
                                 </span>
                             </div>
                             <div className="card-body">
@@ -324,7 +328,10 @@ export default function BiodataEdit() {
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
-                                            File KTP <li style={{ color: "red" }}>(File Wajib PDF, max 4 mb)</li>
+                                            File KTP{" "}
+                                            <li style={{ color: "red" }}>
+                                                (File Wajib PDF, max 4 mb)
+                                            </li>
                                         </label>
                                         <input
                                             type="file"
@@ -341,13 +348,18 @@ export default function BiodataEdit() {
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
-                                            File Buku Tabungan <li style={{ color: "red" }}>(File Wajib PDF, max 4 mb)</li>
+                                            File Buku Tabungan{" "}
+                                            <li style={{ color: "red" }}>
+                                                (File Wajib PDF, max 4 mb)
+                                            </li>
                                         </label>
                                         <input
                                             type="file"
                                             className="form-control"
                                             onChange={(e) =>
-                                                setFilebukutabungan(e.target.files[0])
+                                                setFilebukutabungan(
+                                                    e.target.files[0]
+                                                )
                                             }
                                         />
                                     </div>
@@ -358,7 +370,11 @@ export default function BiodataEdit() {
                                     )}
                                     <div className="mb-3">
                                         <label className="form-label fw-bold">
-                                            File Foto <li style={{ color: "red" }}>(File Wajib JPG,JPEG,PNG max 4 mb)</li>
+                                            File Foto{" "}
+                                            <li style={{ color: "red" }}>
+                                                (File Wajib JPG,JPEG,PNG max 4
+                                                mb)
+                                            </li>
                                         </label>
                                         <input
                                             type="file"

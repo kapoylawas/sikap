@@ -222,4 +222,25 @@ class BiodatasController extends Controller
         //redirect
         return redirect()->route('admin.biodatas.index');
     }
+
+    public function show($id)
+    {
+        //get biodata by ID
+        $biodatas = Biodata::with('sktransaction.sk.jabatan')->findOrFail($id);
+        // dd($biodatas);
+        $cities = City::all();
+        $subdistricts = Subdistrict::all();
+        $villages = Village::all();
+        $banks = Bank::all();
+        
+
+        //return
+        return inertia('Admin/Biodata/Show', [
+            'biodatas'   => $biodatas,
+            'cities' => $cities,
+            'subdistricts' => $subdistricts,
+            'villages' => $villages,
+            'banks' => $banks,
+        ]);
+    }
 }
