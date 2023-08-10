@@ -39,7 +39,7 @@ class Biodata extends Model
 
     public function sktransaction()
     {
-        return $this->hasMany(sktransaction::class);
+        return $this->hasMany(Sktransaction::class);
     }
 
     public function village()
