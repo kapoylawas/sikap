@@ -226,7 +226,7 @@ class BiodatasController extends Controller
     public function show($id)
     {
         //get biodata by ID
-        $biodatas = Biodata::with('sktransaction.sk.jabatan')->findOrFail($id);
+        $biodatas = Biodata::with('sktransaction.sk.jabatan', 'bank', 'city', 'subdistrict')->findOrFail($id);
         // dd($biodatas);
         $cities = City::all();
         $subdistricts = Subdistrict::all();

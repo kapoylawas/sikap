@@ -586,3 +586,12 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   border: 1px solid #ced4da;
   border-radius: 0.375rem;
 }
+
+.image-card-custom {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #d1d1d1;
+  padding: 7px;
+}
