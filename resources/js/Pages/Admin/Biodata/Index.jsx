@@ -41,7 +41,7 @@ export default function BiodatasIndex() {
                                 </Link>
                             </div>
                             <div className="col-md-9 col-12 mb-2">
-                                <Search URL={"/admin/biodata"} />
+                                <Search URL={"/admin/biodatas"} />
                             </div>
                         </div>
                     </div>
