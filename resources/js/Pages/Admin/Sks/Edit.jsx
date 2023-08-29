@@ -20,7 +20,6 @@ export default function SksEdit() {
     //state
     const [villageID, setVillageID] = useState(sks.village_id);
     const [subdistrictID, setSubdistrictID] = useState(sks.subdistrict_id);
-    console.log(subdistrictID);
     const [jobID, setJobID] = useState(sks.jabatan_id);
     const [tahun, setTahun] = useState(sks.tahun);
     const [name, setName] = useState(sks.name);

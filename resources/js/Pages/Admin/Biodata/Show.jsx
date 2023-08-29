@@ -48,11 +48,6 @@ export default function BiodataShow() {
                                     </Tab>
                                     <Tab eventKey="history" title="Histori Jabatan">
                                         Tab content for Histori jabatan 
-                                        {/* {biodatas.sktransaction.map((city) => (
-                                            <div>
-                                                {}
-                                            </div>
-                                        ))} */}
                                         {biodatas.sktransaction.map((sk) => (
                                                 <div>
                                                     {sk.sk.jabatan.name}
