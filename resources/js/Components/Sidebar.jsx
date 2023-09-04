@@ -594,7 +594,7 @@ export default function Sidebar() {
                                 ></li>
                             </>
                         )}
-                        {hasAnyPermission(["laporans.index"]) && (
+                        {hasAnyPermission(["biodatas.index"]) && (
                             <>
                                 <li
                                     className={`${
