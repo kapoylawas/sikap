@@ -1,282 +1,155 @@
 {
-<<<<<<< HEAD
-  "_Admin-70d4abbe.js": {
-    "file": "assets/Admin-70d4abbe.js",
-=======
-  "_Admin-18ff5a87.js": {
-    "file": "assets/Admin-18ff5a87.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+  "_Admin-5de45ef5.js": {
+    "file": "assets/Admin-5de45ef5.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-<<<<<<< HEAD
-  "_Delete-6f875bad.js": {
-    "file": "assets/Delete-6f875bad.js",
+  "_Delete-1cd0c2d3.js": {
+    "file": "assets/Delete-1cd0c2d3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_sweetalert2.all-36215d70.js"
+      "_sweetalert2.all-21d7b9e9.js"
     ]
   },
-  "_Pagination-824932b3.js": {
-    "file": "assets/Pagination-824932b3.js",
-=======
-  "_Delete-61cede23.js": {
-    "file": "assets/Delete-61cede23.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_sweetalert2.all-86fde33c.js"
-    ]
-  },
-  "_Pagination-5e1bf29c.js": {
-    "file": "assets/Pagination-5e1bf29c.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+  "_Pagination-1951b4b7.js": {
+    "file": "assets/Pagination-1951b4b7.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-<<<<<<< HEAD
-  "_index-fe9fb57d.js": {
-    "file": "assets/index-fe9fb57d.js",
-=======
-  "_index-f085f447.js": {
-    "file": "assets/index-f085f447.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+  "_index-b5af17d4.js": {
+    "file": "assets/index-b5af17d4.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-<<<<<<< HEAD
-  "_sweetalert2.all-36215d70.js": {
-    "file": "assets/sweetalert2.all-36215d70.js",
-=======
-  "_sweetalert2.all-86fde33c.js": {
-    "file": "assets/sweetalert2.all-86fde33c.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+  "_sweetalert2.all-21d7b9e9.js": {
+    "file": "assets/sweetalert2.all-21d7b9e9.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
   "resources/js/Pages/Admin/Banks/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-4c6e8e66.js",
+    "file": "assets/Create-c91cb92f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-49878677.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Banks/Create.jsx"
   },
   "resources/js/Pages/Admin/Banks/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-91239655.js",
+    "file": "assets/Edit-d1c6e651.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-63225e99.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Banks/Edit.jsx"
   },
   "resources/js/Pages/Admin/Banks/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-3c3c9869.js",
+    "file": "assets/Index-0503d8a2.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-a997be60.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Banks/Index.jsx"
   },
   "resources/js/Pages/Admin/Biodata/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-a32c9001.js",
+    "file": "assets/Create-98554278.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-dc925ac5.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Biodata/Create.jsx"
   },
   "resources/js/Pages/Admin/Biodata/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-c847ecf6.js",
+    "file": "assets/Edit-b412630b.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-c6dc268d.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Biodata/Edit.jsx"
   },
   "resources/js/Pages/Admin/Biodata/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-066a517a.js",
+    "file": "assets/Index-6afb4fcc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-1ea732fb.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Biodata/Index.jsx"
   },
   "resources/js/Pages/Admin/Biodata/Show.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Show-6506bb97.js",
+    "file": "assets/Show-28735d9e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js"
-=======
-    "file": "assets/Show-c4075008.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Biodata/Show.jsx"
   },
   "resources/js/Pages/Admin/City/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-cf9e8a4e.js",
+    "file": "assets/Create-9623eb9d.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-577be597.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/City/Create.jsx"
   },
   "resources/js/Pages/Admin/City/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-51ad39d7.js",
+    "file": "assets/Edit-f5f2ee57.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-345eab57.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/City/Edit.jsx"
   },
   "resources/js/Pages/Admin/City/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-e2f4a9ab.js",
+    "file": "assets/Index-1ff5a92a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-447980dd.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/City/Index.jsx"
   },
   "resources/js/Pages/Admin/Dashboard/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-96271b39.js",
+    "file": "assets/Index-06bd4361.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js"
-=======
-    "file": "assets/Index-ca3326c7.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Dashboard/Index.jsx"
   },
   "resources/js/Pages/Admin/Honor/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-6f37c373.js",
+    "file": "assets/Create-7bd2e649.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-e7ceb655.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Honor/Create.jsx"
@@ -287,553 +160,309 @@
     "src": "resources/js/Pages/Admin/Honor/Edit.jsx"
   },
   "resources/js/Pages/Admin/Honor/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-2cc742cd.js",
+    "file": "assets/Index-9d6d1061.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-f3fb6aa1.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Honor/Index.jsx"
   },
   "resources/js/Pages/Admin/Jabatans/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-80740dd7.js",
+    "file": "assets/Create-f1bcd6aa.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-ab90f70c.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Jabatans/Create.jsx"
   },
   "resources/js/Pages/Admin/Jabatans/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-8bfa6767.js",
+    "file": "assets/Edit-af464933.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-ddbaa465.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Jabatans/Edit.jsx"
   },
   "resources/js/Pages/Admin/Jabatans/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-b1a2d8e0.js",
+    "file": "assets/Index-3db0c88f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-de8c068d.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Jabatans/Index.jsx"
   },
   "resources/js/Pages/Admin/KelompokJabatan/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-67649161.js",
+    "file": "assets/Create-22958447.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-aa4d9f97.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/KelompokJabatan/Create.jsx"
   },
   "resources/js/Pages/Admin/KelompokJabatan/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-426dd027.js",
+    "file": "assets/Edit-599138cf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-61337a08.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/KelompokJabatan/Edit.jsx"
   },
   "resources/js/Pages/Admin/KelompokJabatan/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-d21a53ca.js",
+    "file": "assets/Index-8506f38e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-3a6e68b5.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/KelompokJabatan/Index.jsx"
   },
-<<<<<<< HEAD
-  "resources/js/Pages/Admin/Permissions/Index.jsx": {
-    "file": "assets/Index-db634a1e.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js"
-=======
   "resources/js/Pages/Admin/Laporans/Index.jsx": {
-    "file": "assets/Index-b582bb54.js",
+    "file": "assets/Index-3aeabbaf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-18ff5a87.js"
+      "_Admin-5de45ef5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Laporans/Index.jsx"
   },
   "resources/js/Pages/Admin/Permissions/Index.jsx": {
-    "file": "assets/Index-8b3d1dd7.js",
+    "file": "assets/Index-27b58a54.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Permissions/Index.jsx"
   },
   "resources/js/Pages/Admin/Puskesmas/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-822d91e3.js",
+    "file": "assets/Create-32e4928c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-d0445bab.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Puskesmas/Create.jsx"
   },
   "resources/js/Pages/Admin/Puskesmas/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-50900f66.js",
+    "file": "assets/Edit-74bdf3db.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-859a250c.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Puskesmas/Edit.jsx"
   },
   "resources/js/Pages/Admin/Puskesmas/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-8376eff1.js",
+    "file": "assets/Index-549f0ef6.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-633ee61b.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Puskesmas/Index.jsx"
   },
   "resources/js/Pages/Admin/Roles/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-2b13495b.js",
+    "file": "assets/Create-f93d32b4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-f7e8296f.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Roles/Create.jsx"
   },
   "resources/js/Pages/Admin/Roles/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-d46ce96c.js",
+    "file": "assets/Edit-9823c1bc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js",
-      "_Pagination-824932b3.js"
-=======
-    "file": "assets/Edit-f5309de3.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js",
-      "_Pagination-5e1bf29c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js",
+      "_Pagination-1951b4b7.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Roles/Edit.jsx"
   },
   "resources/js/Pages/Admin/Roles/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-b2ac1335.js",
+    "file": "assets/Index-c45d8c34.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-21eae32e.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Roles/Index.jsx"
   },
   "resources/js/Pages/Admin/Sks/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-17636cd9.js",
+    "file": "assets/Create-3c662a40.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-f493d1e6.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Sks/Create.jsx"
   },
   "resources/js/Pages/Admin/Sks/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-33876972.js",
+    "file": "assets/Edit-e91a4924.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-1acef308.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Sks/Edit.jsx"
   },
   "resources/js/Pages/Admin/Sks/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-2f03f92d.js",
+    "file": "assets/Index-318a4e31.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-2d1a7798.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Sks/Index.jsx"
   },
   "resources/js/Pages/Admin/Sks/Show.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Show-38b0ae77.js",
+    "file": "assets/Show-6ddd7cbf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js"
-=======
-    "file": "assets/Show-502e5968.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Sks/Show.jsx"
   },
   "resources/js/Pages/Admin/Subdistrict/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-c8b34705.js",
+    "file": "assets/Create-0384311f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-b1eca086.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Subdistrict/Create.jsx"
   },
   "resources/js/Pages/Admin/Subdistrict/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-863e820c.js",
+    "file": "assets/Edit-6d70ed8d.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-dc39dc89.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Subdistrict/Edit.jsx"
   },
   "resources/js/Pages/Admin/Subdistrict/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-30c0b259.js",
+    "file": "assets/Index-603b5643.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-6fd8084d.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Subdistrict/Index.jsx"
   },
   "resources/js/Pages/Admin/Users/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-9771ab75.js",
+    "file": "assets/Create-e38ba561.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Create-fdfb6657.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Users/Create.jsx"
   },
   "resources/js/Pages/Admin/Users/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-baea2800.js",
+    "file": "assets/Edit-4756f718.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Edit-3a3e252d.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Users/Edit.jsx"
   },
   "resources/js/Pages/Admin/Users/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-7fb7969a.js",
+    "file": "assets/Index-c1e80ffc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-018b156f.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Users/Index.jsx"
   },
   "resources/js/Pages/Admin/Village/Create.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Create-e37a03d2.js",
+    "file": "assets/Create-6385d4ad.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js",
-      "_index-fe9fb57d.js"
-=======
-    "file": "assets/Create-ff58d395.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js",
-      "_index-f085f447.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js",
+      "_index-b5af17d4.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Village/Create.jsx"
   },
   "resources/js/Pages/Admin/Village/Edit.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Edit-0a765aa1.js",
+    "file": "assets/Edit-25d0dbeb.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_sweetalert2.all-36215d70.js",
-      "_index-fe9fb57d.js"
-=======
-    "file": "assets/Edit-de4f69e9.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_sweetalert2.all-86fde33c.js",
-      "_index-f085f447.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_sweetalert2.all-21d7b9e9.js",
+      "_index-b5af17d4.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Village/Edit.jsx"
   },
   "resources/js/Pages/Admin/Village/Index.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Index-9779aca4.js",
+    "file": "assets/Index-4998c0b1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_Admin-70d4abbe.js",
-      "_Pagination-824932b3.js",
-      "_Delete-6f875bad.js",
-      "_sweetalert2.all-36215d70.js"
-=======
-    "file": "assets/Index-84c6e722.js",
-    "imports": [
-      "resources/js/app.jsx",
-      "_Admin-18ff5a87.js",
-      "_Pagination-5e1bf29c.js",
-      "_Delete-61cede23.js",
-      "_sweetalert2.all-86fde33c.js"
->>>>>>> 5f8a2ec (update proseses gaji)
+      "_Admin-5de45ef5.js",
+      "_Pagination-1951b4b7.js",
+      "_Delete-1cd0c2d3.js",
+      "_sweetalert2.all-21d7b9e9.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/Pages/Admin/Village/Index.jsx"
   },
   "resources/js/Pages/Auth/Login.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Login-94ae5983.js",
-=======
-    "file": "assets/Login-e2e4e780.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+    "file": "assets/Login-f9f25512.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -841,11 +470,7 @@
     "src": "resources/js/Pages/Auth/Login.jsx"
   },
   "resources/js/Pages/Auth/Register.jsx": {
-<<<<<<< HEAD
-    "file": "assets/Register-6c18fab9.js",
-=======
-    "file": "assets/Register-09c15cf8.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+    "file": "assets/Register-9ee6f2ba.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -898,11 +523,7 @@
       "resources/js/Pages/Auth/Login.jsx",
       "resources/js/Pages/Auth/Register.jsx"
     ],
-<<<<<<< HEAD
-    "file": "assets/app-86258cb8.js",
-=======
-    "file": "assets/app-af2035c0.js",
->>>>>>> 5f8a2ec (update proseses gaji)
+    "file": "assets/app-449953c9.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }
