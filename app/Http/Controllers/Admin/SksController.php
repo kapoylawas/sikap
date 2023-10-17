@@ -147,7 +147,8 @@ class SksController extends Controller
     public function show($id)
     {
         //get sk by ID
-        $sks = Sk::findOrFail($id);
+        $sks = Sk::with('jabatan')->findOrFail($id);
+        // dd($sks);
 
         $biodatas = Biodata::when(request()->q, function ($biodatas) {
             $biodatas = $biodatas->where('name', 'like', '%' . request()->q . '%');
@@ -173,9 +174,13 @@ class SksController extends Controller
             $request,
             [
                 'biodata_id'   => 'required',
+                'tribulan'   => 'required',
+                'tahun'   => 'required',
             ],
             [
                 'biodata_id.required' => 'biodata harus centang dan pilih satu terlebih dahulu',
+                'tribulan.required' => 'pilih tribulan terlebih dahulu',
+                'tahun.required' => 'pilih tahun terlebih dahulu',
             ]
         );
 
@@ -184,10 +189,16 @@ class SksController extends Controller
 
         //insert database
         foreach ($request->biodata_id as $b) {
-            $dobel = Sktransaction::where('sk_id',$request->sk_id)->where('biodata_id',$b)->first();
+            $dobel = Sktransaction::where('sk_id', $request->sk_id)->where('biodata_id', $b)
+                                    ->where('tribulan', $request->tribulan)
+                                    ->where('tahun', $request->tahun)
+                                    ->first();
             if (!$dobel) {
                 $sk->sktransactions()->create([
                     'biodata_id'     => $b,
+                    'tribulan'     => $request->tribulan,
+                    'tahun'     => $request->tahun,
+                    'gaji'     => $request->gaji,
                 ]);
             }
         }

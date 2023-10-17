@@ -1,0 +1,1 @@
+import{R as e,H as t}from"./app-af2035c0.js";import{L as a}from"./Admin-18ff5a87.js";function r(){return e.createElement(e.Fragment,null,e.createElement(t,null,e.createElement("title",null,"Laporan - SIKAP")),e.createElement(a,null,e.createElement("div",{className:"row mt-5"}),e.createElement("div",{className:"row mt-2 mb-4"})))}export{r as default};

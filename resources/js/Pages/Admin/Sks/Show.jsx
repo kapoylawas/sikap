@@ -21,9 +21,24 @@ import Search from "../../../Shared/Search";
 
 export default function SksShow() {
     const { errors, biodatas, sks } = usePage().props;
-    // console.log(biodatas);
 
     const [biodatasData, setBiodataData] = useState([]);
+    const [tribulan, setTribulan] = useState("");
+    const [tahun, settahun] = useState("");
+
+    const gaji = sks.jabatan.tarifgaji;
+    const hasil = gaji * 3;
+
+    const currentYear = new Date().getFullYear();
+
+    const startYear = 2020;
+    const endYear = currentYear;
+
+    // array yang berisi semua tahun dari startYear hingga endYear
+    const yearOptions = Array.from(
+        { length: endYear - startYear + 1 },
+        (_, index) => startYear + index
+    );
 
     //define method "handleCheckboxChange"
     const handleCheckboxChange = (e) => {
@@ -53,6 +68,9 @@ export default function SksShow() {
                 //data
                 sk_id: sks.id,
                 biodata_id: biodatasData,
+                tribulan: tribulan,
+                tahun: tahun,
+                gaji: hasil,
             },
             {
                 onSuccess: () => {
@@ -95,7 +113,7 @@ export default function SksShow() {
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 <div className="row mt-3">
                     <div className="col-12">
                         <div className="card border-0 rounded shadow-sm border-top-success">
@@ -107,6 +125,63 @@ export default function SksShow() {
                             </div>
                             <div className="card-body">
                                 <form onSubmit={storeTransaction}>
+                                    <div className="col-md-12">
+                                        <div className="mb-3">
+                                            <label className="form-label fw-bold">
+                                                Select Tribulan
+                                            </label>
+                                            <select
+                                                className="form-select"
+                                                value={tribulan}
+                                                onChange={(e) =>
+                                                    setTribulan(e.target.value)
+                                                }
+                                            >
+                                                <option value="0">
+                                                    -- Pilih Tribulan --
+                                                </option>
+                                                <option value="1">I</option>
+                                                <option value="2">II</option>
+                                                <option value="3">III</option>
+                                            </select>
+                                        </div>
+                                        {errors.tribulan && (
+                                            <div className="alert alert-danger">
+                                                {errors.tribulan}
+                                            </div>
+                                        )}
+                                    </div>
+                                    <div className="col-md-12">
+                                        <div className="mb-3">
+                                            <label className="form-label fw-bold">
+                                                Select Tahun
+                                            </label>
+                                            <select
+                                                className="form-select"
+                                                value={tahun}
+                                                onChange={(e) =>
+                                                    settahun(e.target.value)
+                                                }
+                                            >
+                                                <option value="0">
+                                                    -- Pilih Tahun --
+                                                </option>
+                                                {yearOptions.map((year) => (
+                                                    <option
+                                                        key={year}
+                                                        value={year}
+                                                    >
+                                                        {year}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        {errors.tahun && (
+                                            <div className="alert alert-danger">
+                                                {errors.tahun}
+                                            </div>
+                                        )}
+                                    </div>
                                     <div className="mb-3">
                                         <label className="fw-bold">
                                             Nama Biodata

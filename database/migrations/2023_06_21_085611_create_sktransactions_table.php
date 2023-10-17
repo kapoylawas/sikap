@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('sk_id')->references('id')->on('sks')->cascadeOnDelete();
             $table->foreignId('biodata_id')->references('id')->on('biodatas')->cascadeOnDelete();
+            $table->string('tribulan');
+            $table->string('tahun');
             // $table->integer('unik')->unique()->nullable();
             $table->timestamps();
         });

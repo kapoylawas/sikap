@@ -50,59 +50,62 @@ Route::prefix('admin')->group(function () {
         //route permissions
         Route::get('/permissions', App\Http\Controllers\Admin\PermissionController::class)->name('admin.permissions.index')->middleware('permission:permissions.index');
 
-       //route resource roles
-       Route::resource('/roles', \App\Http\Controllers\Admin\RoleController::class, ['as' => 'admin'])
-       ->middleware('permission:roles.index|roles.create|roles.edit|roles.delete');
+        //route resource roles
+        Route::resource('/roles', \App\Http\Controllers\Admin\RoleController::class, ['as' => 'admin'])
+            ->middleware('permission:roles.index|roles.create|roles.edit|roles.delete');
 
-       //route resource user
-       Route::resource('/users', \App\Http\Controllers\Admin\UserController::class, ['as' => 'admin'])
-       ->middleware('permission:users.index|users.create|users.edit|users.delete');
-        
-       //route resource city
-       Route::resource('/citys', \App\Http\Controllers\Admin\CityController::class, ['as' => 'admin'])
-       ->middleware('permission:citys.index|citys.create|citys.edit|citys.delete');
+        //route resource user
+        Route::resource('/users', \App\Http\Controllers\Admin\UserController::class, ['as' => 'admin'])
+            ->middleware('permission:users.index|users.create|users.edit|users.delete');
 
-       //route resource subdistricts
-       Route::resource('/subdistricts', \App\Http\Controllers\Admin\SubdistrictController::class, ['as' => 'admin'])
-       ->middleware('permission:subdistricts.index|subdistricts.create|subdistricts.edit|subdistricts.delete');
+        //route resource city
+        Route::resource('/citys', \App\Http\Controllers\Admin\CityController::class, ['as' => 'admin'])
+            ->middleware('permission:citys.index|citys.create|citys.edit|citys.delete');
 
-       //route resource villages
-       Route::resource('/villages', \App\Http\Controllers\Admin\VillageController::class, ['as' => 'admin'])
-       ->middleware('permission:villages.index|villages.create|villages.edit|villages.delete');
+        //route resource subdistricts
+        Route::resource('/subdistricts', \App\Http\Controllers\Admin\SubdistrictController::class, ['as' => 'admin'])
+            ->middleware('permission:subdistricts.index|subdistricts.create|subdistricts.edit|subdistricts.delete');
 
-       //route resource bank
-       Route::resource('/banks', \App\Http\Controllers\Admin\BanksController::class, ['as' => 'admin'])
-       ->middleware('permission:banks.index|banks.create|banks.edit|banks.delete');
+        //route resource villages
+        Route::resource('/villages', \App\Http\Controllers\Admin\VillageController::class, ['as' => 'admin'])
+            ->middleware('permission:villages.index|villages.create|villages.edit|villages.delete');
+
+        //route resource bank
+        Route::resource('/banks', \App\Http\Controllers\Admin\BanksController::class, ['as' => 'admin'])
+            ->middleware('permission:banks.index|banks.create|banks.edit|banks.delete');
 
         // route resource kelompok jabatan
-       Route::resource('/jobs', \App\Http\Controllers\Admin\KelompokJabatanController::class, ['as' => 'admin'])
-       ->middleware('permission:jobs.index|jobs.create|jobs.edit|jobs.delete');
+        Route::resource('/jobs', \App\Http\Controllers\Admin\KelompokJabatanController::class, ['as' => 'admin'])
+            ->middleware('permission:jobs.index|jobs.create|jobs.edit|jobs.delete');
 
         // route resource jabatan
-       Route::resource('/jabatans', \App\Http\Controllers\Admin\JobsController::class, ['as' => 'admin'])
-       ->middleware('permission:jabatans.index|jabatans.create|jabatans.edit|jabatans.delete');
+        Route::resource('/jabatans', \App\Http\Controllers\Admin\JobsController::class, ['as' => 'admin'])
+            ->middleware('permission:jabatans.index|jabatans.create|jabatans.edit|jabatans.delete');
 
         // route resource Honor
-       Route::resource('/honor', \App\Http\Controllers\Admin\HonorController::class, ['as' => 'admin'])
-       ->middleware('permission:honor.index|honor.create|honor.edit|honor.delete');
+        Route::resource('/honor', \App\Http\Controllers\Admin\HonorController::class, ['as' => 'admin'])
+            ->middleware('permission:honor.index|honor.create|honor.edit|honor.delete');
 
         // route resource biodata
-       Route::resource('/biodatas', \App\Http\Controllers\Admin\BiodatasController::class, ['as' => 'admin'])
-       ->middleware('permission:biodatas.index|biodatas.create|biodatas.edit|biodatas.delete');
+        Route::resource('/biodatas', \App\Http\Controllers\Admin\BiodatasController::class, ['as' => 'admin'])
+            ->middleware('permission:biodatas.index|biodatas.create|biodatas.edit|biodatas.delete');
 
-       // route resource puskesmas
-       Route::resource('/puskesmas', \App\Http\Controllers\Admin\PuskesmasController::class, ['as' => 'admin'])
-       ->middleware('permission:puskesmas.index|puskesmas.create|puskesmas.edit|puskesmas.delete');
+        // route resource puskesmas
+        Route::resource('/puskesmas', \App\Http\Controllers\Admin\PuskesmasController::class, ['as' => 'admin'])
+            ->middleware('permission:puskesmas.index|puskesmas.create|puskesmas.edit|puskesmas.delete');
 
-       // route resource puskesmas
-       Route::resource('/sks', \App\Http\Controllers\Admin\SksController::class, ['as' => 'admin'])
-       ->middleware('permission:sks.index|sks.create|sks.edit|sks.delete');
+        // route resource sks
+        Route::resource('/sks', \App\Http\Controllers\Admin\SksController::class, ['as' => 'admin'])
+            ->middleware('permission:sks.index|sks.create|sks.edit|sks.delete');
 
-       //route store transaction sk
-       Route::post('/sks/store_transaction', [\App\Http\Controllers\Admin\SksController::class, 'storeTransactionSk'])->name('admin.sks.store_transaction');
+        // route resource laporan
+        Route::resource('/laporans', \App\Http\Controllers\Admin\LaporansController::class, ['as' => 'admin'])
+            ->middleware('permission:laporans.index|laporans.create|laporans.edit|laporans.delete');
 
-       //route destroy transaction sk for biodata
-       Route::delete('/sks/destroy_transaction/{id}', [\App\Http\Controllers\Admin\SksController::class, 'destroyTransaction'])->name('account.sks.destroy_transaction');
+        //route store transaction sk
+        Route::post('/sks/store_transaction', [\App\Http\Controllers\Admin\SksController::class, 'storeTransactionSk'])->name('admin.sks.store_transaction');
 
+        //route destroy transaction sk for biodata
+        Route::delete('/sks/destroy_transaction/{id}', [\App\Http\Controllers\Admin\SksController::class, 'destroyTransaction'])->name('account.sks.destroy_transaction');
     });
 });
