@@ -38,6 +38,7 @@ Route::post('/logout', \App\Http\Controllers\Auth\LogoutController::class)->name
 // get kecamatan by id
 Route::get('/kecamatan', [\App\Http\Controllers\Admin\VillageController::class, 'getKecamatan'])->name('kecamatan');
 
+
 //prefix "admin"
 Route::prefix('admin')->group(function () {
 
@@ -107,5 +108,8 @@ Route::prefix('admin')->group(function () {
 
         //route destroy transaction sk for biodata
         Route::delete('/sks/destroy_transaction/{id}', [\App\Http\Controllers\Admin\SksController::class, 'destroyTransaction'])->name('account.sks.destroy_transaction');
+
+        // get tribulan
+        Route::get('/tribulan', [\App\Http\Controllers\Admin\LaporansController::class, 'getTribulan'])->name('tribulan');
     });
 });
