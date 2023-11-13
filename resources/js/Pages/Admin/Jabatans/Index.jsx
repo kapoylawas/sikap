@@ -21,7 +21,7 @@ import Pagination from "../../../Shared/Pagination";
 
 export default function JabatansIndex() {
     const { jabatans } = usePage().props;
-
+    
     return (
         <>
             <Head>
